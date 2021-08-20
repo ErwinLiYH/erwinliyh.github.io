@@ -6,10 +6,19 @@
     <description>Recent content in Categories on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 19 Aug 2021 15:58:43 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Aug 2021 16:25:34 +0800</lastBuildDate>
     
 	<atom:link href="http://walkurehhh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python</title>
+      <link>http://walkurehhh.github.io/categories/python/</link>
+      <pubDate>Fri, 20 Aug 2021 16:25:34 +0800</pubDate>
+      
+      <guid>http://walkurehhh.github.io/categories/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://walkurehhh.github.io/tags/blog/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
+    <loc>http://walkurehhh.github.io/categories/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://walkurehhh.github.io/categories/</loc>
+    <loc>http://walkurehhh.github.io/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/posts/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/tags/python/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/categories/python/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/posts/python_mutable_immutable_objects/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/tags/</loc>
+    <lastmod>2021-08-20T16:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://walkurehhh.github.io/tags/blog/</loc>
     <lastmod>2021-08-20T15:58:43+08:00</lastmod>
   </url>
   
@@ -29,21 +59,6 @@
   
   <url>
     <loc>http://walkurehhh.github.io/tags/instruction/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/</loc>
     <lastmod>2021-08-20T15:58:43+08:00</lastmod>
   </url>
   

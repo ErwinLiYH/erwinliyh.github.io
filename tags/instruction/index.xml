@@ -6,10 +6,19 @@
     <description>Recent content in instruction on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 19 Aug 2021 15:58:43 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Aug 2021 16:34:38 +0800</lastBuildDate>
     
 	<atom:link href="http://walkurehhh.github.io/tags/instruction/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git basic operation</title>
+      <link>http://walkurehhh.github.io/posts/git_base/</link>
+      <pubDate>Tue, 24 Aug 2021 16:34:38 +0800</pubDate>
+      
+      <guid>http://walkurehhh.github.io/posts/git_base/</guid>
+      <description>&lt;p&gt;Basic usage of git and github.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hugo instruction</title>

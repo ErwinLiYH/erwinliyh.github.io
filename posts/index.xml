@@ -2,75 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on LYH&#39;s Blog</title>
-    <link>http://walkurehhh.github.io/posts/</link>
+    <link>http://erwinliyh.github.io/posts/</link>
     <description>Recent content in Posts on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 24 Aug 2021 16:34:38 +0800</lastBuildDate>
-    
-	<atom:link href="http://walkurehhh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 28 Oct 2022 12:10:55 +0100</lastBuildDate><atom:link href="http://erwinliyh.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenMP stack problem</title>
+      <link>http://erwinliyh.github.io/posts/openmp_stack/</link>
+      <pubDate>Fri, 28 Oct 2022 12:10:55 +0100</pubDate>
+      
+      <guid>http://erwinliyh.github.io/posts/openmp_stack/</guid>
+      <description>&lt;p&gt;OpenMP program cause the segmentation fault, because the stack is too small.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Git basic operation</title>
-      <link>http://walkurehhh.github.io/posts/git_base/</link>
+      <link>http://erwinliyh.github.io/posts/git_base/</link>
       <pubDate>Tue, 24 Aug 2021 16:34:38 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/git_base/</guid>
+      <guid>http://erwinliyh.github.io/posts/git_base/</guid>
       <description>&lt;p&gt;Basic usage of git and github.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Two pyinstaller problems</title>
-      <link>http://walkurehhh.github.io/posts/two_pyinstaller_problem/</link>
+      <link>http://erwinliyh.github.io/posts/two_pyinstaller_problem/</link>
       <pubDate>Tue, 24 Aug 2021 16:34:01 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/two_pyinstaller_problem/</guid>
+      <guid>http://erwinliyh.github.io/posts/two_pyinstaller_problem/</guid>
       <description>&lt;p&gt;Two pyinstaller problems recorded when I first use it.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Augmented matrix</title>
-      <link>http://walkurehhh.github.io/posts/augmented_matrix/</link>
+      <link>http://erwinliyh.github.io/posts/augmented_matrix/</link>
       <pubDate>Tue, 24 Aug 2021 16:33:36 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/augmented_matrix/</guid>
+      <guid>http://erwinliyh.github.io/posts/augmented_matrix/</guid>
       <description>&lt;p&gt;How to write augmented matrix by Latex.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Boolean series bug</title>
-      <link>http://walkurehhh.github.io/posts/boolean_series/</link>
+      <link>http://erwinliyh.github.io/posts/boolean_series/</link>
       <pubDate>Tue, 24 Aug 2021 16:18:36 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/boolean_series/</guid>
+      <guid>http://erwinliyh.github.io/posts/boolean_series/</guid>
       <description>&lt;p&gt;We can&amp;rsquo;t use &amp;ldquo;in&amp;rdquo; operator to check if False or True in a boolean series.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Pointer in Python</title>
-      <link>http://walkurehhh.github.io/posts/python_pointer/</link>
+      <link>http://erwinliyh.github.io/posts/python_pointer/</link>
       <pubDate>Tue, 24 Aug 2021 14:49:09 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/python_pointer/</guid>
+      <guid>http://erwinliyh.github.io/posts/python_pointer/</guid>
       <description>&lt;p&gt;Simulating pointer in python.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python mutable and immutable objects</title>
-      <link>http://walkurehhh.github.io/posts/python_mutable_immutable_objects/</link>
+      <link>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</link>
       <pubDate>Fri, 20 Aug 2021 16:25:34 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/python_mutable_immutable_objects/</guid>
+      <guid>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</guid>
       <description>&lt;p&gt;Illuminating the difference between mutable and immutable objects in python&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hugo instruction</title>
-      <link>http://walkurehhh.github.io/posts/hugo_instruct/</link>
+      <link>http://erwinliyh.github.io/posts/hugo_instruct/</link>
       <pubDate>Thu, 19 Aug 2021 15:58:43 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/hugo_instruct/</guid>
+      <guid>http://erwinliyh.github.io/posts/hugo_instruct/</guid>
       <description>&lt;p&gt;Elementary usage of hugo, recorded when I build this blog.&lt;/p&gt;</description>
     </item>
     

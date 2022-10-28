@@ -1,115 +1,83 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>http://walkurehhh.github.io/categories/</loc>
+    <loc>http://erwinliyh.github.io/categories/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/hpc/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/openmp/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/openmp_stack/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/stack/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/</loc>
+    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/git/</loc>
     <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/categories/git/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/git_base/</loc>
     <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/git_base/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/instruction/</loc>
     <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/instruction/</loc>
-    <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/</loc>
-    <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/</loc>
-    <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/</loc>
-    <lastmod>2021-08-24T16:34:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/pyinstaller/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/pyinstaller/</loc>
     <lastmod>2021-08-24T16:34:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/categories/python/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/python/</loc>
     <lastmod>2021-08-24T16:34:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/two_pyinstaller_problem/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/two_pyinstaller_problem/</loc>
     <lastmod>2021-08-24T16:34:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/augmented_matrix/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/augmented_matrix/</loc>
     <lastmod>2021-08-24T16:33:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/latex/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/latex/</loc>
     <lastmod>2021-08-24T16:33:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/categories/markup/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/markup/</loc>
     <lastmod>2021-08-24T16:33:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/boolean_series/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/boolean_series/</loc>
     <lastmod>2021-08-24T16:18:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/pandas/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/pandas/</loc>
     <lastmod>2021-08-24T16:18:36+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/python_pointer/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/python_pointer/</loc>
     <lastmod>2021-08-24T14:49:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/python/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/python/</loc>
     <lastmod>2021-08-24T14:49:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/python_mutable_immutable_objects/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</loc>
     <lastmod>2021-08-20T16:25:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/blog/</loc>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/blog/</loc>
+    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/hugo/</loc>
+    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/hugo/</loc>
+    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/hugo_instruct/</loc>
     <lastmod>2021-08-20T15:58:43+08:00</lastmod>
   </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/tags/hugo/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/categories/hugo/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://walkurehhh.github.io/posts/hugo_instruct/</loc>
-    <lastmod>2021-08-20T15:58:43+08:00</lastmod>
-  </url>
-  
 </urlset>

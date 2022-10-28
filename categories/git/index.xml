@@ -2,21 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on LYH&#39;s Blog</title>
-    <link>http://walkurehhh.github.io/categories/git/</link>
+    <link>http://erwinliyh.github.io/categories/git/</link>
     <description>Recent content in git on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 24 Aug 2021 16:34:38 +0800</lastBuildDate>
-    
-	<atom:link href="http://walkurehhh.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 24 Aug 2021 16:34:38 +0800</lastBuildDate><atom:link href="http://erwinliyh.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git basic operation</title>
-      <link>http://walkurehhh.github.io/posts/git_base/</link>
+      <link>http://erwinliyh.github.io/posts/git_base/</link>
       <pubDate>Tue, 24 Aug 2021 16:34:38 +0800</pubDate>
       
-      <guid>http://walkurehhh.github.io/posts/git_base/</guid>
+      <guid>http://erwinliyh.github.io/posts/git_base/</guid>
       <description>&lt;p&gt;Basic usage of git and github.&lt;/p&gt;</description>
     </item>
     

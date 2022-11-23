@@ -2,14 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://erwinliyh.github.io/categories/</loc>
-    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+    <loc>http://erwinliyh.github.io/tags/arch/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
   </url><url>
-    <loc>http://erwinliyh.github.io/categories/hpc/</loc>
-    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+    <loc>http://erwinliyh.github.io/posts/arch_install/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/linux/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
   </url><url>
     <loc>http://erwinliyh.github.io/</loc>
-    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/</loc>
+    <lastmod>2022-11-23T16:17:44+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/category1/</loc>
+    <lastmod>2022-11-22T11:32:31+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/dwm_mint/</loc>
+    <lastmod>2022-11-22T11:32:31+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/tag1/</loc>
+    <lastmod>2022-11-22T11:32:31+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/tag2/</loc>
+    <lastmod>2022-11-22T11:32:31+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/makefile/</loc>
+    <lastmod>2022-11-12T23:30:23+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/c/</loc>
+    <lastmod>2022-11-11T23:20:55+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/impressing-bugs/</loc>
+    <lastmod>2022-11-11T23:20:55+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/python/</loc>
+    <lastmod>2022-11-11T23:20:55+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/python_c/</loc>
+    <lastmod>2022-11-11T23:20:55+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/openmp/</loc>
+    <lastmod>2022-11-02T22:08:26+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/hpc/</loc>
+    <lastmod>2022-11-02T22:08:19+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/mpi/</loc>
+    <lastmod>2022-11-02T22:08:19+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/mpi/</loc>
+    <lastmod>2022-11-02T22:08:19+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/install/</loc>
+    <lastmod>2022-11-02T14:54:14+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/posts/r_tidyverse_intall/</loc>
+    <lastmod>2022-11-02T14:54:14+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/categories/r/</loc>
+    <lastmod>2022-11-02T14:54:14+00:00</lastmod>
+  </url><url>
+    <loc>http://erwinliyh.github.io/tags/tidyverse/</loc>
+    <lastmod>2022-11-02T14:54:14+00:00</lastmod>
   </url><url>
     <loc>http://erwinliyh.github.io/tags/openmp/</loc>
     <lastmod>2022-10-28T12:10:55+01:00</lastmod>
@@ -17,13 +80,7 @@
     <loc>http://erwinliyh.github.io/posts/openmp_stack/</loc>
     <lastmod>2022-10-28T12:10:55+01:00</lastmod>
   </url><url>
-    <loc>http://erwinliyh.github.io/posts/</loc>
-    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
-  </url><url>
     <loc>http://erwinliyh.github.io/tags/stack/</loc>
-    <lastmod>2022-10-28T12:10:55+01:00</lastmod>
-  </url><url>
-    <loc>http://erwinliyh.github.io/tags/</loc>
     <lastmod>2022-10-28T12:10:55+01:00</lastmod>
   </url><url>
     <loc>http://erwinliyh.github.io/categories/git/</loc>
@@ -60,9 +117,6 @@
     <lastmod>2021-08-24T16:18:36+08:00</lastmod>
   </url><url>
     <loc>http://erwinliyh.github.io/posts/python_pointer/</loc>
-    <lastmod>2021-08-24T14:49:09+08:00</lastmod>
-  </url><url>
-    <loc>http://erwinliyh.github.io/tags/python/</loc>
     <lastmod>2021-08-24T14:49:09+08:00</lastmod>
   </url><url>
     <loc>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</loc>

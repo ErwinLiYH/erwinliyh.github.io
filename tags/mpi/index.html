@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MPI | LYH&#39;s Blog</title>
+
+    
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="Erwin" />
+<meta name="description" content="Li Yuanhao&#39;s Blog" />
+
+
+
+<meta name="generator" content="Hugo 0.92.2" />
+
+<link rel="canonical" href="http://erwinliyh.github.io/tags/mpi/" />
+
+
+<meta property="og:title" content="MPI" />
+<meta property="og:description" content="Li Yuanhao&#39;s Blog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://erwinliyh.github.io/tags/mpi/" /><meta property="og:image" content="http://erwinliyh.github.io"/>
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://erwinliyh.github.io"/>
+
+<meta name="twitter:title" content="MPI"/>
+<meta name="twitter:description" content="Li Yuanhao&#39;s Blog"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/icomoon.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+<style>
+  a:not(.ui.button):hover {
+    text-decoration: underline;
+  }
+
+  
+  a:not(.ui.button) {
+    color: seagreen !important;
+  }
+  
+
+  
+  .inverted a:not(.ui.button),
+  .inverted a:not(.ui.button):hover {
+     color: darkseagreen !important;
+  }
+  
+
+  
+  body.default {
+    
+    background-color: #f2cac9;
+    
+
+    
+    background-image: url(/img/1.jpg);
+    
+  }
+  
+
+  
+  body.dark {
+    
+    background-color: #b36d61;
+    
+
+    
+    background-image: url(/img/1.jpg);
+    
+  }
+  
+</style>
+
+
+     
+
+    
+    <link rel="stylesheet" href="/css/background.css" />
+    
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="Home" onclick="window.location.href = 'http:\/\/erwinliyh.github.io'"></i>
+  </div>
+  <div class="item">
+    <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+
+<header class="ui basic very padded segment dream-header">
+  <div class="ui small circular image">
+    
+    <img src="/img/ichigo_square.jpg" />
+    
+  </div>
+
+  <div class="content">
+    <h1 class="ui medium header">Li Yuanhao&#39;s Blog<div class="sub header">python yyds</div>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="/categories">
+        <i class="th list icon" title="All Categories"></i>
+      </a>
+      <a class="item" href="/tags">
+        <i class="tags icon" title="All Tags"></i>
+      </a>
+    </article>
+
+    
+    <article class="dream-tags">
+    
+      
+      
+      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+    
+      
+      
+      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
+    
+      
+      
+      <a class="ui label" href="/tags/c/" title="C">C</a>
+    
+      
+      
+      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
+    
+      
+      
+      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+    
+      
+      
+      <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
+    
+      
+      
+      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
+    
+      
+      
+      <a class="ui label" href="/tags/mpi/" title="Mpi">Mpi</a>
+    
+      
+      
+      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
+    
+      
+      
+      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
+    
+      
+      
+      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
+    
+      
+      
+      <a class="ui label" href="/tags/python/" title="Python">Python</a>
+    
+      
+      
+      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tag1/" title="Tag1">Tag1</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tag2/" title="Tag2">Tag2</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
+    
+    </article>
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid">
+  
+  
+  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+    <article class="ui attached segment card dream-card">
+  <a class="image" href="http://erwinliyh.github.io/posts/mpi/">
+    
+    <img src="/img/cover.jpg" alt="MPI communication" />
+    
+  </a>
+
+  <div class="content">
+    <h2 class="ui medium header">
+      <a href="/posts/mpi/">MPI communication</a>
+    </h2>
+    <div class="meta">
+      <p class="date">Wednesday, Nov 2, 2022</p>
+    </div>
+    <div class="description">
+      <p>Note of MPI communication methods</p>
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="author">@&nbsp;Erwin</div>
+    <div class="reading-time">
+      <i class="clock icon"></i>1 minute read</div>
+  </div>
+</article>
+
+  </div>
+  
+
+  
+</div>
+
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              
+              <p>© 2020 - 2022 LYH&#39;s Blog</p>
+              
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <header class="ui basic very padded segment dream-header">
+  <div class="ui small circular image">
+    
+    <img src="/img/ichigo_square.jpg" />
+    
+  </div>
+
+  <div class="content">
+    <h1 class="ui medium header">Li Yuanhao&#39;s Blog<div class="sub header">python yyds</div>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="/categories">
+        <i class="th list icon" title="All Categories"></i>
+      </a>
+      <a class="item" href="/tags">
+        <i class="tags icon" title="All Tags"></i>
+      </a>
+    </article>
+
+    
+    <article class="dream-tags">
+    
+      
+      
+      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+    
+      
+      
+      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
+    
+      
+      
+      <a class="ui label" href="/tags/c/" title="C">C</a>
+    
+      
+      
+      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
+    
+      
+      
+      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+    
+      
+      
+      <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
+    
+      
+      
+      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
+    
+      
+      
+      <a class="ui label" href="/tags/mpi/" title="Mpi">Mpi</a>
+    
+      
+      
+      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
+    
+      
+      
+      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
+    
+      
+      
+      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
+    
+      
+      
+      <a class="ui label" href="/tags/python/" title="Python">Python</a>
+    
+      
+      
+      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tag1/" title="Tag1">Tag1</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tag2/" title="Tag2">Tag2</a>
+    
+      
+      
+      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
+    
+    </article>
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid dream-back">
+  
+  
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <h3 class="ui header">About Me</h3>
+      <p>Education background:</p>
+<ol>
+<li>
+<p>Bachelor:</p>
+<p><strong>Data science</strong> in <a href="https://www.uic.edu.cn/">Peking Normal University-HongKong Baptist University United International University (UIC)</a></p>
+</li>
+<li>
+<p>Msc:</p>
+<p><strong>High performance computing with data science</strong> in <a href="https://www.ed.ac.uk/">University of Edinburgh</a></p>
+</li>
+</ol>
+<p>Research area:</p>
+<ol>
+<li>NLP</li>
+<li>CV</li>
+<li>HPC</li>
+</ol>
+<p>Published papers:</p>
+<ol>
+<li>TBD</li>
+</ol>
+<p>Interesting:</p>
+<ol>
+<li>Guqin(古琴)</li>
+<li>Classical music</li>
+</ol>
+
+    </article>
+  </div>
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <h3 class="ui header">个人简介</h3>
+      <p>学习经历：</p>
+<ol>
+<li>
+<p>学士</p>
+<p>就读于<a href="https://www.uic.edu.cn/">北京师范大学-香港浸会大学联合国际学院 (UIC</a>)，专业为<strong>数据科学</strong></p>
+</li>
+<li>
+<p>研究生</p>
+<p>就读于<a href="https://www.ed.ac.uk/">爱丁堡大学</a>，专业为<strong>高性能运算与大数据</strong></p>
+</li>
+</ol>
+<p>研究方向：</p>
+<ol>
+<li>NLP</li>
+<li>CV</li>
+<li>HPC</li>
+</ol>
+<p>发表论文：</p>
+<ol>
+<li>TBD</li>
+</ol>
+<p>兴趣爱好：</p>
+<ol>
+<li>古琴</li>
+<li>古典音乐</li>
+</ol>
+
+    </article>
+  </div>
+  
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <h3 class="ui header">Social Links</h3>
+      <nav class="ui secondary menu dream-menu dream-socials">
+  
+
+  
+  <div class="item">
+    <a href="mailto:erwinli@qq.com">
+      <i class="large mail icon" title="Email"></i>
+    </a>
+  </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <div class="item">
+    <a href="https://github.com/ErwinLiYH" target="_blank">
+      <i class="large github icon" title="GitHub"></i>
+    </a>
+  </div>
+  
+
+  
+
+  
+</nav>
+
+    </article>
+  </div>
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+  </div>
+
+  
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.defaultDark =  true 
+  window.backgroundDark = "#b36d61"
+  window.backgroundImageDark = "/img/1.jpg"
+  window.darkNav =  null 
+  window.hasTwitterEmbed =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/grid.js"></script>
+
+
+    
+    <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('http:\/\/erwinliyh.github.io/index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+
+    
+  </body>
+</html>

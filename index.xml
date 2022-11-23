@@ -17,51 +17,6 @@
     </item>
     
     <item>
-      <title>Dwm_mint</title>
-      <link>http://erwinliyh.github.io/posts/dwm_mint/</link>
-      <pubDate>Tue, 22 Nov 2022 11:32:31 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/posts/dwm_mint/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Makefile</title>
-      <link>http://erwinliyh.github.io/posts/makefile/</link>
-      <pubDate>Sat, 12 Nov 2022 23:30:23 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/posts/makefile/</guid>
-      <description>&lt;p&gt;Simple makefile tutorial.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Some problem for pythoner when learning c</title>
-      <link>http://erwinliyh.github.io/posts/python_c/</link>
-      <pubDate>Fri, 11 Nov 2022 23:20:55 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/posts/python_c/</guid>
-      <description>&lt;p&gt;As a native python writer, when learning C, there are lots of problems you will encounter. This blog list some impressing problems for me.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OpenMP</title>
-      <link>http://erwinliyh.github.io/posts/openmp/</link>
-      <pubDate>Wed, 02 Nov 2022 22:08:26 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/posts/openmp/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MPI communication</title>
-      <link>http://erwinliyh.github.io/posts/mpi/</link>
-      <pubDate>Wed, 02 Nov 2022 22:08:19 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/posts/mpi/</guid>
-      <description>&lt;p&gt;Note of MPI communication methods&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Install R packages tidyverse in Ubuntu22.04 or Mint21</title>
       <link>http://erwinliyh.github.io/posts/r_tidyverse_intall/</link>
       <pubDate>Wed, 02 Nov 2022 14:54:14 +0000</pubDate>

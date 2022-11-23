@@ -17,54 +17,9 @@
     </item>
     
     <item>
-      <title>tag1</title>
-      <link>http://erwinliyh.github.io/tags/tag1/</link>
-      <pubDate>Tue, 22 Nov 2022 11:32:31 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/tags/tag1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag2</title>
-      <link>http://erwinliyh.github.io/tags/tag2/</link>
-      <pubDate>Tue, 22 Nov 2022 11:32:31 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/tags/tag2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>c</title>
-      <link>http://erwinliyh.github.io/tags/c/</link>
-      <pubDate>Fri, 11 Nov 2022 23:20:55 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>http://erwinliyh.github.io/tags/python/</link>
-      <pubDate>Fri, 11 Nov 2022 23:20:55 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MPI</title>
-      <link>http://erwinliyh.github.io/tags/mpi/</link>
-      <pubDate>Wed, 02 Nov 2022 22:08:19 +0000</pubDate>
-      
-      <guid>http://erwinliyh.github.io/tags/mpi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>install</title>
       <link>http://erwinliyh.github.io/tags/install/</link>
-      <pubDate>Wed, 02 Nov 2022 14:54:14 +0000</pubDate>
+      <pubDate>Wed, 23 Nov 2022 16:17:44 +0000</pubDate>
       
       <guid>http://erwinliyh.github.io/tags/install/</guid>
       <description></description>
@@ -130,6 +85,15 @@
       <pubDate>Tue, 24 Aug 2021 16:18:36 +0800</pubDate>
       
       <guid>http://erwinliyh.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://erwinliyh.github.io/tags/python/</link>
+      <pubDate>Tue, 24 Aug 2021 14:49:09 +0800</pubDate>
+      
+      <guid>http://erwinliyh.github.io/tags/python/</guid>
       <description></description>
     </item>
     

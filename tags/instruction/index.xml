@@ -2,95 +2,95 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Instruction on LYH&#39;s Blog</title>
-    <link>http://erwinliyh.github.io/tags/instruction/</link>
+    <link>https://erwinliyh.github.io/tags/instruction/</link>
     <description>Recent content in Instruction on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Thu, 27 Jul 2023 20:08:27 +0100</lastBuildDate>
-    <atom:link href="http://erwinliyh.github.io/tags/instruction/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://erwinliyh.github.io/tags/instruction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C_basics</title>
-      <link>http://erwinliyh.github.io/posts/c_basics/</link>
+      <link>https://erwinliyh.github.io/posts/c_basics/</link>
       <pubDate>Thu, 27 Jul 2023 20:08:27 +0100</pubDate>
-      <guid>http://erwinliyh.github.io/posts/c_basics/</guid>
+      <guid>https://erwinliyh.github.io/posts/c_basics/</guid>
       <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git advanced technique</title>
-      <link>http://erwinliyh.github.io/posts/git_advance/</link>
+      <link>https://erwinliyh.github.io/posts/git_advance/</link>
       <pubDate>Thu, 27 Jul 2023 20:08:10 +0100</pubDate>
-      <guid>http://erwinliyh.github.io/posts/git_advance/</guid>
+      <guid>https://erwinliyh.github.io/posts/git_advance/</guid>
       <description>&lt;p&gt;Some useful git tips:&lt;/p&gt;
 &lt;p&gt;Stash, Checkout, partially staging and MV&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gnome optimisation and Linux display problem</title>
-      <link>http://erwinliyh.github.io/posts/gnome/</link>
+      <link>https://erwinliyh.github.io/posts/gnome/</link>
       <pubDate>Sat, 25 Feb 2023 17:14:33 +0000</pubDate>
-      <guid>http://erwinliyh.github.io/posts/gnome/</guid>
+      <guid>https://erwinliyh.github.io/posts/gnome/</guid>
       <description>&lt;p&gt;Make Gnome more comfortable&lt;/p&gt;</description>
     </item>
     <item>
       <title>After install Arch</title>
-      <link>http://erwinliyh.github.io/posts/arch_after_install/</link>
+      <link>https://erwinliyh.github.io/posts/arch_after_install/</link>
       <pubDate>Thu, 24 Nov 2022 17:53:09 +0000</pubDate>
-      <guid>http://erwinliyh.github.io/posts/arch_after_install/</guid>
+      <guid>https://erwinliyh.github.io/posts/arch_after_install/</guid>
       <description>&lt;p&gt;After installing the Arch, we need to configurate it to ensure the daily usage. My plan is Arch+dwm&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arch install problem</title>
-      <link>http://erwinliyh.github.io/posts/arch_install/</link>
+      <link>https://erwinliyh.github.io/posts/arch_install/</link>
       <pubDate>Wed, 23 Nov 2022 16:17:44 +0000</pubDate>
-      <guid>http://erwinliyh.github.io/posts/arch_install/</guid>
+      <guid>https://erwinliyh.github.io/posts/arch_install/</guid>
       <description>&lt;p&gt;Most of installation steps can be done by following official tutorial. This are some tricky problem when I install the Arch.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Install DWM in Mint Linux</title>
-      <link>http://erwinliyh.github.io/posts/dwm_mint/</link>
+      <link>https://erwinliyh.github.io/posts/dwm_mint/</link>
       <pubDate>Tue, 22 Nov 2022 11:32:31 +0000</pubDate>
-      <guid>http://erwinliyh.github.io/posts/dwm_mint/</guid>
+      <guid>https://erwinliyh.github.io/posts/dwm_mint/</guid>
       <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Install R packages tidyverse in Ubuntu22.04 or Mint21</title>
-      <link>http://erwinliyh.github.io/posts/r_tidyverse_intall/</link>
+      <link>https://erwinliyh.github.io/posts/r_tidyverse_intall/</link>
       <pubDate>Wed, 02 Nov 2022 14:54:14 +0000</pubDate>
-      <guid>http://erwinliyh.github.io/posts/r_tidyverse_intall/</guid>
+      <guid>https://erwinliyh.github.io/posts/r_tidyverse_intall/</guid>
       <description>&lt;p&gt;Errors in tidyverse installing&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git basic operation</title>
-      <link>http://erwinliyh.github.io/posts/git_base/</link>
+      <link>https://erwinliyh.github.io/posts/git_base/</link>
       <pubDate>Tue, 24 Aug 2021 16:34:38 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/git_base/</guid>
+      <guid>https://erwinliyh.github.io/posts/git_base/</guid>
       <description>&lt;p&gt;Basic usage of git and github.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Augmented matrix</title>
-      <link>http://erwinliyh.github.io/posts/augmented_matrix/</link>
+      <link>https://erwinliyh.github.io/posts/augmented_matrix/</link>
       <pubDate>Tue, 24 Aug 2021 16:33:36 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/augmented_matrix/</guid>
+      <guid>https://erwinliyh.github.io/posts/augmented_matrix/</guid>
       <description>&lt;p&gt;How to write augmented matrix by Latex.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pointer in Python</title>
-      <link>http://erwinliyh.github.io/posts/python_pointer/</link>
+      <link>https://erwinliyh.github.io/posts/python_pointer/</link>
       <pubDate>Tue, 24 Aug 2021 14:49:09 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/python_pointer/</guid>
+      <guid>https://erwinliyh.github.io/posts/python_pointer/</guid>
       <description>&lt;p&gt;Simulating pointer in python.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Python mutable and immutable objects</title>
-      <link>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</link>
+      <link>https://erwinliyh.github.io/posts/python_mutable_immutable_objects/</link>
       <pubDate>Fri, 20 Aug 2021 16:25:34 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/python_mutable_immutable_objects/</guid>
+      <guid>https://erwinliyh.github.io/posts/python_mutable_immutable_objects/</guid>
       <description>&lt;p&gt;Illuminating the difference between mutable and immutable objects in python&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo instruction</title>
-      <link>http://erwinliyh.github.io/posts/hugo_instruct/</link>
+      <link>https://erwinliyh.github.io/posts/hugo_instruct/</link>
       <pubDate>Thu, 19 Aug 2021 15:58:43 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/hugo_instruct/</guid>
+      <guid>https://erwinliyh.github.io/posts/hugo_instruct/</guid>
       <description>&lt;p&gt;Elementary usage of hugo, recorded when I build this blog.&lt;/p&gt;</description>
     </item>
   </channel>

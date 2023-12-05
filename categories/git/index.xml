@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on LYH&#39;s Blog</title>
-    <link>http://erwinliyh.github.io/categories/git/</link>
+    <link>https://erwinliyh.github.io/categories/git/</link>
     <description>Recent content in git on LYH&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Thu, 27 Jul 2023 20:08:10 +0100</lastBuildDate>
-    <atom:link href="http://erwinliyh.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://erwinliyh.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git advanced technique</title>
-      <link>http://erwinliyh.github.io/posts/git_advance/</link>
+      <link>https://erwinliyh.github.io/posts/git_advance/</link>
       <pubDate>Thu, 27 Jul 2023 20:08:10 +0100</pubDate>
-      <guid>http://erwinliyh.github.io/posts/git_advance/</guid>
+      <guid>https://erwinliyh.github.io/posts/git_advance/</guid>
       <description>&lt;p&gt;Some useful git tips:&lt;/p&gt;
 &lt;p&gt;Stash, Checkout, partially staging and MV&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git basic operation</title>
-      <link>http://erwinliyh.github.io/posts/git_base/</link>
+      <link>https://erwinliyh.github.io/posts/git_base/</link>
       <pubDate>Tue, 24 Aug 2021 16:34:38 +0800</pubDate>
-      <guid>http://erwinliyh.github.io/posts/git_base/</guid>
+      <guid>https://erwinliyh.github.io/posts/git_base/</guid>
       <description>&lt;p&gt;Basic usage of git and github.&lt;/p&gt;</description>
     </item>
   </channel>

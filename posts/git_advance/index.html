@@ -152,6 +152,8 @@ Stash, Checkout, partially staging and MV"/>
   <ul>
     <li><a href="#stash">Stash</a></li>
     <li><a href="#checkout">Checkout</a></li>
+    <li><a href="#restore">Restore</a></li>
+    <li><a href="#reset">Reset</a></li>
     <li><a href="#patch-staging">Patch staging</a></li>
     <li><a href="#mv">MV</a></li>
   </ul>
@@ -225,6 +227,16 @@ Stash, Checkout, partially staging and MV"/>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout branch_name
 </span></span></code></pre></div><p>Clean all unstaged change and recover to last commit status:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout .
+</span></span></code></pre></div><h2 id="restore">Restore</h2>
+<p>Unstage a file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore --staged xxx
+</span></span></code></pre></div><p>Recover a unstaed file to the status in last commit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore xxx
+</span></span></code></pre></div><h2 id="reset">Reset</h2>
+<p>Withdraw a commit, retain changes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --soft HEAD^
+</span></span></code></pre></div><p>Delete a commit, delete all changes in this commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard HEAD^
 </span></span></code></pre></div><h2 id="patch-staging">Patch staging</h2>
 <p>Stage part of a file.</p>
 <p>Firstly,</p>
@@ -238,6 +250,8 @@ Stash, Checkout, partially staging and MV"/>
 <h2 id="mv">MV</h2>
 <p>Move file xxx1 to xxx2. Both of the file and the git record will be removed.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git mv xxx1 xxx2
+</span></span></code></pre></div><p>Untrack a file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git mv --cached xxx <span style="color:#75715e"># this is a change, need commit it to make it effective</span>
 </span></span></code></pre></div>
       </article>
     </section>
@@ -363,9 +377,15 @@ Stash, Checkout, partially staging and MV"/>
 <p>Msc:</p>
 <p><strong>High performance computing with data science</strong> in <a href="https://www.ed.ac.uk/">University of Edinburgh</a></p>
 </li>
+<li>
+<p>PhD:</p>
+<p><strong>Computer Science</strong> in <a href="https://www.exeter.ac.uk/">University of Exeter</a></p>
+</li>
 </ol>
 <p>Research area:</p>
 <ol>
+<li>Native-AI Network</li>
+<li>RL(MARL)</li>
 <li>NLP</li>
 <li>CV</li>
 <li>HPC</li>
@@ -394,11 +414,17 @@ Stash, Checkout, partially staging and MV"/>
 </li>
 <li>
 <p>研究生</p>
-<p>就读于<a href="https://www.ed.ac.uk/">爱丁堡大学</a>，专业为<strong>高性能运算与大数据</strong></p>
+<p>就读于<a href="https://www.ed.ac.uk/">爱丁堡大学 University of Edinburgh</a>，专业为<strong>高性能运算与大数据</strong></p>
+</li>
+<li>
+<p>博士</p>
 </li>
 </ol>
+<p>​	就读于<a href="https://www.exeter.ac.uk/">埃克塞特大学 University of Exeter</a>, 专业为<strong>计算机科学</strong></p>
 <p>研究方向：</p>
 <ol>
+<li>Native-AI Network</li>
+<li>RL(MARL)</li>
 <li>NLP</li>
 <li>CV</li>
 <li>HPC</li>

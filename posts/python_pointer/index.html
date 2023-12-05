@@ -18,7 +18,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.120.4">
 
 <link rel="canonical" href="http://erwinliyh.github.io/posts/python_pointer/" />
 
@@ -164,6 +164,10 @@
   </aside>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <div class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/python.png);"></div>
+    </div>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">Pointer in Python<div class="sub header">
@@ -191,57 +195,57 @@
       <article class="main"><p>Simulating pointer in python.</p>
 <h2 id="mutable-and-immutable-value-in-memory">Mutable and immutable value in memory</h2>
 <p>For immutable value like integer, consider the code below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-b <span style="color:#f92672">=</span> a
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-</code></pre></div><p>After that, a will equal to 10 and b will equal to 20. The pictures demonstrate the memory behind the code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> a
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p>After that, a will equal to 10 and b will equal to 20. The pictures demonstrate the memory behind the code:</p>
 <p><img src="/img/202108241508.svg" alt=""></p>
 <p>We  can find the name of the value is actually a pointer, but we can&rsquo;t use them in immutable value, because we can&rsquo;t change the value pointed.</p>
 <p>For mutable value like list, consider the code below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
-b <span style="color:#f92672">=</span> a
-b<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">5</span>)
-</code></pre></div><p>After that, both a and b will be [1,2,3,4,5], the memory usage is like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> a
+</span></span><span style="display:flex;"><span>b<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">5</span>)
+</span></span></code></pre></div><p>After that, both a and b will be [1,2,3,4,5], the memory usage is like:</p>
 <p><img src="/img/202108241532.svg" alt=""></p>
 <p>By this property in mutable value, we can simulate pointer like c++.</p>
 <h2 id="using-mutable-value-simulate-pointer">Using mutable value simulate pointer</h2>
 <p>Take linked list by python as an example. This is the second question in LeetCode, Add two numbers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListNode</span>:
-    <span style="color:#66d9ef">def</span> __init__(self, val<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, next<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
-        self<span style="color:#f92672">.</span>val <span style="color:#f92672">=</span> val
-        self<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> next
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addTwoNumbers</span>(self, l1: ListNode, l2: ListNode) <span style="color:#f92672">-&gt;</span> ListNode:
-        head <span style="color:#f92672">=</span> ListNode()
-        p1 <span style="color:#f92672">=</span> head
-        p2 <span style="color:#f92672">=</span> (l1,l2)
-        d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
-            <span style="color:#66d9ef">if</span> p2[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]:
-                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>),((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
-                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
-                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
-                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>next,p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>next)
-                d <span style="color:#f92672">=</span> s
-            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">!=</span><span style="color:#66d9ef">None</span>:
-                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>,(p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
-                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
-                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
-                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>],p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>next)
-                d <span style="color:#f92672">=</span> s
-            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">!=</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span>:
-                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>,(p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
-                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
-                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
-                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>next,p2[<span style="color:#ae81ff">1</span>])
-                d <span style="color:#f92672">=</span> s
-            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> d<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span>:
-                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(d)
-                d<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> d<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
-                <span style="color:#66d9ef">break</span>
-        <span style="color:#66d9ef">return</span> head<span style="color:#f92672">.</span>next
-</code></pre></div><p>In this example, p1 and p2 are pointers.</p></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListNode</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, val<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, next<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>val <span style="color:#f92672">=</span> val
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> next
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addTwoNumbers</span>(self, l1: ListNode, l2: ListNode) <span style="color:#f92672">-&gt;</span> ListNode:
+</span></span><span style="display:flex;"><span>        head <span style="color:#f92672">=</span> ListNode()
+</span></span><span style="display:flex;"><span>        p1 <span style="color:#f92672">=</span> head
+</span></span><span style="display:flex;"><span>        p2 <span style="color:#f92672">=</span> (l1,l2)
+</span></span><span style="display:flex;"><span>        d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> p2[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>),((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
+</span></span><span style="display:flex;"><span>                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
+</span></span><span style="display:flex;"><span>                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>next,p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>next)
+</span></span><span style="display:flex;"><span>                d <span style="color:#f92672">=</span> s
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">!=</span><span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>,(p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
+</span></span><span style="display:flex;"><span>                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
+</span></span><span style="display:flex;"><span>                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>],p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>next)
+</span></span><span style="display:flex;"><span>                d <span style="color:#f92672">=</span> s
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">!=</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>                value, s <span style="color:#f92672">=</span> ((p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>,(p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>val <span style="color:#f92672">+</span> d)<span style="color:#f92672">//</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(value)
+</span></span><span style="display:flex;"><span>                p1 <span style="color:#f92672">=</span> p1<span style="color:#f92672">.</span>next
+</span></span><span style="display:flex;"><span>                p2 <span style="color:#f92672">=</span> (p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>next,p2[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>                d <span style="color:#f92672">=</span> s
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> d<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                p1<span style="color:#f92672">.</span>next <span style="color:#f92672">=</span> ListNode(d)
+</span></span><span style="display:flex;"><span>                d<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">elif</span> p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> p2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">==</span><span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> d<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> head<span style="color:#f92672">.</span>next
+</span></span></code></pre></div><p>In this example, p1 and p2 are pointers.</p></article>
     </section>
 
     
@@ -266,7 +270,7 @@ b<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">5</span>
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2020 - 2022 LYH&#39;s Blog</p>
+              <p>© 2020 - 2023 LYH&#39;s Blog</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -307,51 +311,15 @@ b<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">5</span>
     
       
       
-      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+      <a class="ui label" href="/tags/bugs/" title="Bugs">Bugs</a>
     
       
       
-      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
-    
-      
-      
-      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
-    
-      
-      
-      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+      <a class="ui label" href="/tags/caution/" title="Caution">Caution</a>
     
       
       
       <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
-    
-      
-      
-      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
-    
-      
-      
-      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
-    
-      
-      
-      <a class="ui label" href="/tags/python/" title="Python">Python</a>
-    
-      
-      
-      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
-    
-      
-      
-      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
     
     </article>
     

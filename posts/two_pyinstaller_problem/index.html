@@ -18,7 +18,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.120.4">
 
 <link rel="canonical" href="http://erwinliyh.github.io/posts/two_pyinstaller_problem/" />
 
@@ -164,6 +164,10 @@
   </aside>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <div class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/python.png);"></div>
+    </div>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">Two pyinstaller problems<div class="sub header">
@@ -196,18 +200,18 @@
 and <a href="https://stackoverflow.com/questions/34775667/pyinstaller-django-pkg-resources-distributionnotfound-the-django-omnibus">https://stackoverflow.com/questions/34775667/pyinstaller-django-pkg-resources-distributionnotfound-the-django-omnibus</a></p>
 <p>Solution:</p>
 <p>Create a python file with content like this in the current directory.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PyInstaller.utils.hooks <span style="color:#f92672">import</span> copy_metadata
-datas <span style="color:#f92672">=</span> copy_metadata(<span style="color:#e6db74">&#39;prettytable&#39;</span>)
-</code></pre></div><p>Than:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyinstaller xxx.py --additional-hooks-dir<span style="color:#f92672">=</span>.
-</code></pre></div><h2 id="second-problem-ctrl-c">Second problem: Ctrl-C</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PyInstaller.utils.hooks <span style="color:#f92672">import</span> copy_metadata
+</span></span><span style="display:flex;"><span>datas <span style="color:#f92672">=</span> copy_metadata(<span style="color:#e6db74">&#39;prettytable&#39;</span>)
+</span></span></code></pre></div><p>Than:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pyinstaller xxx.py --additional-hooks-dir<span style="color:#f92672">=</span>.
+</span></span></code></pre></div><h2 id="second-problem-ctrl-c">Second problem: Ctrl-C</h2>
 <p>In my code, Ctrl-C used to break the loop</p>
 <p><img src="/img/interupt.png" alt=""></p>
 <p>But after I make executable file by pyinstaller, it performance incorrectly:</p>
 <p><img src="/img/keyboardinterupt.png" alt=""></p>
 <p>Method:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyinstaller xxx.py --bootloader-ignore-signals
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pyinstaller xxx.py --bootloader-ignore-signals
+</span></span></code></pre></div></article>
     </section>
 
     
@@ -232,7 +236,7 @@ datas <span style="color:#f92672">=</span> copy_metadata(<span style="color:#e6d
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2020 - 2022 LYH&#39;s Blog</p>
+              <p>© 2020 - 2023 LYH&#39;s Blog</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -273,51 +277,15 @@ datas <span style="color:#f92672">=</span> copy_metadata(<span style="color:#e6d
     
       
       
-      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+      <a class="ui label" href="/tags/bugs/" title="Bugs">Bugs</a>
     
       
       
-      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
-    
-      
-      
-      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
-    
-      
-      
-      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+      <a class="ui label" href="/tags/caution/" title="Caution">Caution</a>
     
       
       
       <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
-    
-      
-      
-      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
-    
-      
-      
-      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
-    
-      
-      
-      <a class="ui label" href="/tags/python/" title="Python">Python</a>
-    
-      
-      
-      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
-    
-      
-      
-      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
     
     </article>
     

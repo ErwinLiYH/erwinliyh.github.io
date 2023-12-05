@@ -18,7 +18,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.120.4">
 
 <link rel="canonical" href="http://erwinliyh.github.io/posts/arch_install/" />
 
@@ -169,6 +169,10 @@
   </aside>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <div class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/archlinux.jpg);"></div>
+    </div>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">Arch install problem<div class="sub header">
@@ -196,19 +200,19 @@
       <article class="main"><p>Most of installation steps can be done by following official tutorial. This are some tricky problem when I install the Arch.</p>
 <h2 id="problem-1-grub-boot-problem">Problem 1: GRUB boot problem</h2>
 <p>Do not forget gennerate GRUB configuration:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -S grub bootmgr efibootmgr
-grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/boot --bootloader-id<span style="color:#f92672">=</span>GRUB
-grub-mkconfig -o /boot/grub/grub.cfg  <span style="color:#75715e">#!!!!!!!!do not forget!!!!!!!!!</span>
-</code></pre></div><h2 id="problem-2-network-configuration">Problem 2: Network configuration</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S grub bootmgr efibootmgr
+</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/boot --bootloader-id<span style="color:#f92672">=</span>GRUB
+</span></span><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg  <span style="color:#75715e">#!!!!!!!!do not forget!!!!!!!!!</span>
+</span></span></code></pre></div><h2 id="problem-2-network-configuration">Problem 2: Network configuration</h2>
 <p>Please install dhcpcd when Install essential packages:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacstrap -K /mnt base linux linux-firmware dhcpcd wpa_suppicant wireless_tools
-               <span style="color:#75715e">#| officially recomended   |            for network            |</span>
-</code></pre></div><p>dhcpcd reference: <a href="https://wiki.archlinux.org/title/dhcpcd">https://wiki.archlinux.org/title/dhcpcd</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap -K /mnt base linux linux-firmware dhcpcd wpa_suppicant wireless_tools
+</span></span><span style="display:flex;"><span>               <span style="color:#75715e">#| officially recomended   |            for network            |</span>
+</span></span></code></pre></div><p>dhcpcd reference: <a href="https://wiki.archlinux.org/title/dhcpcd">https://wiki.archlinux.org/title/dhcpcd</a></p>
 <p>wpa_supplicant reference: <a href="https://wiki.archlinux.org/title/Wpa_supplicant">https://wiki.archlinux.org/title/Wpa_supplicant</a></p>
 <h3 id="setup-wired-network">Setup wired network</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ip link             <span style="color:#75715e"># check interface(optial)</span>
-dhcpcd <span style="color:#66d9ef">$(</span>interface<span style="color:#66d9ef">)</span> <span style="color:#75715e"># interface is optial</span>
-</code></pre></div><h3 id="setup-wireless-network">Setup wireless network</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip link             <span style="color:#75715e"># check interface(optial)</span>
+</span></span><span style="display:flex;"><span>dhcpcd <span style="color:#66d9ef">$(</span>interface<span style="color:#66d9ef">)</span> <span style="color:#75715e"># interface is optial</span>
+</span></span></code></pre></div><h3 id="setup-wireless-network">Setup wireless network</h3>
 <p>Firstly, edit the basic conf file for wpa_supplicant:</p>
 <pre tabindex="0"><code>/etc/wpa_supplicant/wpa_supplicant.conf
 
@@ -221,48 +225,48 @@ update_config=1
 <p>Generate conf file by official tools <a href="https://cat.eduroam.org/">https://cat.eduroam.org/</a>.</p>
 <pre tabindex="0"><code>example: /path/to/cat_installer.conf
 network={
-        ssid=&quot;eduroam&quot;
+        ssid=&#34;eduroam&#34;
         key_mgmt=WPA-EAP
         pairwise=CCMP
         group=CCMP TKIP
         eap=PEAP
-        ca_cert=&quot;/path/to/ca.pem&quot;
-        identity=&quot;xxxxxxxxxxx&quot;
-        altsubject_match=&quot;DNS:radius01.is.ed.ac.uk&quot;
-        phase2=&quot;auth=MSCHAPV2&quot;
-	password=&quot;xxxxxxxxxxx&quot;
+        ca_cert=&#34;/path/to/ca.pem&#34;
+        identity=&#34;xxxxxxxxxxx&#34;
+        altsubject_match=&#34;DNS:radius01.is.ed.ac.uk&#34;
+        phase2=&#34;auth=MSCHAPV2&#34;
+	password=&#34;xxxxxxxxxxx&#34;
 
 }
 </code></pre><p>Then add the conf to default conf and start it :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /path/to/cat_installer.conf &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
-
-wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf
-
-iwconfig   <span style="color:#75715e"># (optial) you will find your $(interface) access to a wifi now</span>
-
-wpa_cli -p /run/wpa_supplicant.conf  <span style="color:#75715e"># (optial) if you want to manage your links</span>
-</code></pre></div><p>reference: <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless#eduroam">https://wiki.archlinux.org/title/Network_configuration/Wireless#eduroam</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /path/to/cat_installer.conf &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>iwconfig   <span style="color:#75715e"># (optial) you will find your $(interface) access to a wifi now</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wpa_cli -p /run/wpa_supplicant.conf  <span style="color:#75715e"># (optial) if you want to manage your links</span>
+</span></span></code></pre></div><p>reference: <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless#eduroam">https://wiki.archlinux.org/title/Network_configuration/Wireless#eduroam</a></p>
 </li>
 <li>
 <p>normal wifi</p>
 <p>Generate conf file by wpa_passphrase:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_passphrase WIFI_name<span style="color:#f92672">(</span>SSID<span style="color:#f92672">)</span> password<span style="color:#f92672">(</span>passphrase<span style="color:#f92672">)</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
-
-wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf
-
-iwconfig   <span style="color:#75715e"># (optial) you will find your $(interface) access to a wifi now</span>
-
-wpa_cli -p /run/wpa_supplicant.conf  <span style="color:#75715e"># (optial) if you want to manage your links</span>
-</code></pre></div><p>reference: <a href="https://wiki.archlinux.org/title/Wpa_supplicant#Connecting_with_wpa_passphrase">https://wiki.archlinux.org/title/Wpa_supplicant#Connecting_with_wpa_passphrase</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpa_passphrase WIFI_name<span style="color:#f92672">(</span>SSID<span style="color:#f92672">)</span> password<span style="color:#f92672">(</span>passphrase<span style="color:#f92672">)</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wpa_supplicant -B -i interface -c /etc/wpa_supplicant/wpa_supplicant.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>iwconfig   <span style="color:#75715e"># (optial) you will find your $(interface) access to a wifi now</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wpa_cli -p /run/wpa_supplicant.conf  <span style="color:#75715e"># (optial) if you want to manage your links</span>
+</span></span></code></pre></div><p>reference: <a href="https://wiki.archlinux.org/title/Wpa_supplicant#Connecting_with_wpa_passphrase">https://wiki.archlinux.org/title/Wpa_supplicant#Connecting_with_wpa_passphrase</a></p>
 </li>
 </ol>
 <p>At last start dhcpcd:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dhcpcd <span style="color:#66d9ef">$(</span>interface<span style="color:#66d9ef">)</span> <span style="color:#75715e"># interface is optial</span>
-</code></pre></div><p>Start dhcpcd and wpa_supplicant as service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl enable wpa_supplicant@interface.service
-<span style="color:#75715e"># config file for this service: /etc/wpa_supplicant/wpa_supplicant-interface.conf</span>
-systemctl enable dhcpcd@interface.service
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dhcpcd <span style="color:#66d9ef">$(</span>interface<span style="color:#66d9ef">)</span> <span style="color:#75715e"># interface is optial</span>
+</span></span></code></pre></div><p>Start dhcpcd and wpa_supplicant as service:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable wpa_supplicant@interface.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># config file for this service: /etc/wpa_supplicant/wpa_supplicant-interface.conf</span>
+</span></span><span style="display:flex;"><span>systemctl enable dhcpcd@interface.service
+</span></span></code></pre></div></article>
     </section>
 
     
@@ -287,7 +291,7 @@ systemctl enable dhcpcd@interface.service
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2020 - 2022 LYH&#39;s Blog</p>
+              <p>© 2020 - 2023 LYH&#39;s Blog</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -328,51 +332,15 @@ systemctl enable dhcpcd@interface.service
     
       
       
-      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+      <a class="ui label" href="/tags/bugs/" title="Bugs">Bugs</a>
     
       
       
-      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
-    
-      
-      
-      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
-    
-      
-      
-      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+      <a class="ui label" href="/tags/caution/" title="Caution">Caution</a>
     
       
       
       <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
-    
-      
-      
-      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
-    
-      
-      
-      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
-    
-      
-      
-      <a class="ui label" href="/tags/python/" title="Python">Python</a>
-    
-      
-      
-      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
-    
-      
-      
-      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
     
     </article>
     

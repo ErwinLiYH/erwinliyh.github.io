@@ -18,7 +18,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2" />
+<meta name="generator" content="Hugo 0.120.4">
 
 <link rel="canonical" href="http://erwinliyh.github.io/posts/python_mutable_immutable_objects/" />
 
@@ -164,6 +164,10 @@
   </aside>
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <div class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/python.png);"></div>
+    </div>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">Python mutable and immutable objects<div class="sub header">
@@ -192,39 +196,39 @@
 <h2 id="mutable-objects">Mutable objects</h2>
 <p>The location of mutable objects will be changed when reassign value to it, it will not change when change the value.</p>
 <p>Mutable objects contain list, dictionary, set and custom classes.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span>:
-    <span style="color:#66d9ef">def</span> __init__(self,name):
-        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
-
-a <span style="color:#f92672">=</span> person(<span style="color:#e6db74">&#34;Li&#34;</span>)
-b <span style="color:#f92672">=</span> a
-a<span style="color:#f92672">.</span>name, b<span style="color:#f92672">.</span>name
-</code></pre></div><pre><code>('Li', 'Li')
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self,name):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> person(<span style="color:#e6db74">&#34;Li&#34;</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> a
+</span></span><span style="display:flex;"><span>a<span style="color:#f92672">.</span>name, b<span style="color:#f92672">.</span>name
+</span></span></code></pre></div><pre><code>('Li', 'Li')
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a), id(b)
-</code></pre></div><pre><code>(140342160258672, 140342160258672)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id(a), id(b)
+</span></span></code></pre></div><pre><code>(140342160258672, 140342160258672)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Wang&#34;</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a<span style="color:#f92672">.</span>name, b<span style="color:#f92672">.</span>name
-</code></pre></div><pre><code>('Wang', 'Wang')
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Wang&#34;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a<span style="color:#f92672">.</span>name, b<span style="color:#f92672">.</span>name
+</span></span></code></pre></div><pre><code>('Wang', 'Wang')
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a), id(b)
-</code></pre></div><pre><code>(140342160258672, 140342160258672)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id(a), id(b)
+</span></span></code></pre></div><pre><code>(140342160258672, 140342160258672)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
-l2 <span style="color:#f92672">=</span> l1
-l1, l2
-</code></pre></div><pre><code>([1, 2, 3], [1, 2, 3])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>l1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>l2 <span style="color:#f92672">=</span> l1
+</span></span><span style="display:flex;"><span>l1, l2
+</span></span></code></pre></div><pre><code>([1, 2, 3], [1, 2, 3])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(l1), id(l2)
-</code></pre></div><pre><code>(140342160434432, 140342160434432)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id(l1), id(l2)
+</span></span></code></pre></div><pre><code>(140342160434432, 140342160434432)
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l2<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
-l1, l2
-</code></pre></div><pre><code>([1, 2, 3, 2], [1, 2, 3, 2])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>l2<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>l1, l2
+</span></span></code></pre></div><pre><code>([1, 2, 3, 2], [1, 2, 3, 2])
 </code></pre>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(l1), id(l2)
-</code></pre></div><pre><code>(140342160434432, 140342160434432)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>id(l1), id(l2)
+</span></span></code></pre></div><pre><code>(140342160434432, 140342160434432)
 </code></pre>
 <h2 id="immutable-objects">immutable objects</h2>
 <p>The location of immutable objects will be changed when the value be changed, if location don&rsquo;t be changed, the value can&rsquo;t be changed too.</p>
@@ -253,7 +257,7 @@ l1, l2
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2020 - 2022 LYH&#39;s Blog</p>
+              <p>© 2020 - 2023 LYH&#39;s Blog</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -294,51 +298,15 @@ l1, l2
     
       
       
-      <a class="ui label" href="/tags/arch/" title="Arch">Arch</a>
+      <a class="ui label" href="/tags/bugs/" title="Bugs">Bugs</a>
     
       
       
-      <a class="ui label" href="/tags/blog/" title="Blog">Blog</a>
-    
-      
-      
-      <a class="ui label" href="/tags/hugo/" title="Hugo">Hugo</a>
-    
-      
-      
-      <a class="ui label" href="/tags/install/" title="Install">Install</a>
+      <a class="ui label" href="/tags/caution/" title="Caution">Caution</a>
     
       
       
       <a class="ui label" href="/tags/instruction/" title="Instruction">Instruction</a>
-    
-      
-      
-      <a class="ui label" href="/tags/latex/" title="Latex">Latex</a>
-    
-      
-      
-      <a class="ui label" href="/tags/openmp/" title="Openmp">Openmp</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pandas/" title="Pandas">Pandas</a>
-    
-      
-      
-      <a class="ui label" href="/tags/pyinstaller/" title="Pyinstaller">Pyinstaller</a>
-    
-      
-      
-      <a class="ui label" href="/tags/python/" title="Python">Python</a>
-    
-      
-      
-      <a class="ui label" href="/tags/stack/" title="Stack">Stack</a>
-    
-      
-      
-      <a class="ui label" href="/tags/tidyverse/" title="Tidyverse">Tidyverse</a>
     
     </article>
     

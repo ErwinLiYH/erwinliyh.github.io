@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bugs on LYH&#39;s Blog</title>
+    <link>http://erwinliyh.github.io/tags/bugs/</link>
+    <description>Recent content in Bugs on LYH&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Fri, 28 Oct 2022 12:10:55 +0100</lastBuildDate>
+    <atom:link href="http://erwinliyh.github.io/tags/bugs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenMP stack problem</title>
+      <link>http://erwinliyh.github.io/posts/openmp_stack/</link>
+      <pubDate>Fri, 28 Oct 2022 12:10:55 +0100</pubDate>
+      <guid>http://erwinliyh.github.io/posts/openmp_stack/</guid>
+      <description>&lt;p&gt;OpenMP program cause the segmentation fault, because OpenMP program need much more stack resourses then normal C apps.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Two pyinstaller problems</title>
+      <link>http://erwinliyh.github.io/posts/two_pyinstaller_problem/</link>
+      <pubDate>Tue, 24 Aug 2021 16:34:01 +0800</pubDate>
+      <guid>http://erwinliyh.github.io/posts/two_pyinstaller_problem/</guid>
+      <description>&lt;p&gt;Two pyinstaller problems recorded when I first use it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

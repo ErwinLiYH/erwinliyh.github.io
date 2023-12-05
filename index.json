@@ -1,34 +1,33 @@
 
 
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
+  
 
-    
-
-    
+  
 
 [{"categories":["C language"],"description":"\u003cp\u003eCut out summary from your post content here.\u003c/p\u003e","tags":["Instruction"],"title":"C_basics","url":"http://erwinliyh.github.io/posts/c_basics/"},{"categories":["git"],"description":"\u003cp\u003eSome useful git tips:\u003c/p\u003e\n\u003cp\u003eStash, Checkout, partially staging and MV\u003c/p\u003e","tags":["instruction"],"title":"Git advanced technique","url":"http://erwinliyh.github.io/posts/git_advance/"},{"categories":["Linux"],"description":"\u003cp\u003eMake Gnome more comfortable\u003c/p\u003e","tags":["Instruction"],"title":"Gnome optimisation and Linux display problem","url":"http://erwinliyh.github.io/posts/gnome/"},{"categories":["Linux"],"description":"\u003cp\u003eAfter installing the Arch, we need to configurate it to ensure the daily usage. My plan is Arch+dwm\u003c/p\u003e","tags":["Instruction"],"title":"After install Arch","url":"http://erwinliyh.github.io/posts/arch_after_install/"},{"categories":["Linux"],"description":"\u003cp\u003eMost of installation steps can be done by following official tutorial. This are some tricky problem when I install the Arch.\u003c/p\u003e","tags":["Instruction"],"title":"Arch install problem","url":"http://erwinliyh.github.io/posts/arch_install/"},{"categories":["linux"],"description":"\u003cp\u003eCut out summary from your post content here.\u003c/p\u003e","tags":["Instruction"],"title":"Install DWM in Mint Linux","url":"http://erwinliyh.github.io/posts/dwm_mint/"},{"categories":["R"],"description":"\u003cp\u003eErrors in tidyverse installing\u003c/p\u003e","tags":["Instruction"],"title":"Install R packages tidyverse in Ubuntu22.04 or Mint21","url":"http://erwinliyh.github.io/posts/r_tidyverse_intall/"},{"categories":["HPC"],"description":"\u003cp\u003eOpenMP program cause the segmentation fault, because OpenMP program need much more stack resourses then normal C apps.\u003c/p\u003e","tags":["Bugs"],"title":"OpenMP stack problem","url":"http://erwinliyh.github.io/posts/openmp_stack/"},{"categories":["git"],"description":"\u003cp\u003eBasic usage of git and github.\u003c/p\u003e","tags":["instruction"],"title":"Git basic operation","url":"http://erwinliyh.github.io/posts/git_base/"},{"categories":["Python"],"description":"\u003cp\u003eTwo pyinstaller problems recorded when I first use it.\u003c/p\u003e","tags":["Bugs"],"title":"Two pyinstaller problems","url":"http://erwinliyh.github.io/posts/two_pyinstaller_problem/"},{"categories":["LATEX"],"description":"\u003cp\u003eHow to write augmented matrix by Latex.\u003c/p\u003e","tags":["Instruction"],"title":"Augmented matrix","url":"http://erwinliyh.github.io/posts/augmented_matrix/"},{"categories":["Python"],"description":"\u003cp\u003eWe can\u0026rsquo;t use \u0026ldquo;in\u0026rdquo; operator to check if False or True in a boolean series.\u003c/p\u003e","tags":["Caution"],"title":"Boolean series bug","url":"http://erwinliyh.github.io/posts/boolean_series/"},{"categories":["Python"],"description":"\u003cp\u003eSimulating pointer in python.\u003c/p\u003e","tags":["Instruction"],"title":"Pointer in Python","url":"http://erwinliyh.github.io/posts/python_pointer/"},{"categories":["Python"],"description":"\u003cp\u003eIlluminating the difference between mutable and immutable objects in python\u003c/p\u003e","tags":["Instruction","Caution"],"title":"Python mutable and immutable objects","url":"http://erwinliyh.github.io/posts/python_mutable_immutable_objects/"},{"categories":["Hugo"],"description":"\u003cp\u003eElementary usage of hugo, recorded when I build this blog.\u003c/p\u003e","tags":["Instruction"],"title":"Hugo instruction","url":"http://erwinliyh.github.io/posts/hugo_instruct/"}]

@@ -1,0 +1,31 @@
+/* change color of card */
+.ui.inverted.segment, .ui.primary.inverted.segment{
+    background: rgba(105,105,105, 0.9);
+    color: rgb(255,255,255)
+}
+
+.ui.segment, .ui.primary.segment{
+    background: rgba(227, 227, 227, 0.9);
+}
+
+/* don't display cover in post page */
+.cover{
+    display: none
+}
+
+/* change About me icon */
+i.large.link.bullseye.icon {
+    width: auto;
+}
+
+i.icon.bullseye::before {
+    content: "About me";
+}
+
+i.large.link.lang.icon{
+    width: auto;
+}
+
+i.icon.lang::before{
+    content: "中文网";
+}

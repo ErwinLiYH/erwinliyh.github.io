@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Git advanced technique | Li Yuanhao&#39;s Blog</title>
+    <title>Cython | Li Yuanhao&#39;s Blog</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,24 +13,19 @@
 
 
 <meta name="author" content="Erwin" />
-<meta name="description" content="Some useful git tips:
-Stash, Checkout, partially staging and MV
-" />
+<meta name="description" content="Li Yuanhao&#39;s Blog" />
 
 
 
 <meta name="generator" content="Hugo 0.120.4">
 
-<link rel="canonical" href="https://erwinliyh.github.io/en/posts/git_advance/" />
+<link rel="canonical" href="https://erwinliyh.github.io/en/categories/cython/" />
 
 
-<meta property="og:title" content="Git advanced technique" />
-<meta property="og:description" content="Some useful git tips:
-Stash, Checkout, partially staging and MV" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://erwinliyh.github.io/en/posts/git_advance/" /><meta property="og:image" content="https://erwinliyh.github.io"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-07-27T20:08:10+01:00" />
-<meta property="article:modified_time" content="2023-12-14T12:09:39+00:00" />
+<meta property="og:title" content="Cython" />
+<meta property="og:description" content="Li Yuanhao&#39;s Blog" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://erwinliyh.github.io/en/categories/cython/" /><meta property="og:image" content="https://erwinliyh.github.io"/>
 
 
 
@@ -38,9 +33,8 @@ Stash, Checkout, partially staging and MV" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://erwinliyh.github.io"/>
 
-<meta name="twitter:title" content="Git advanced technique"/>
-<meta name="twitter:description" content="Some useful git tips:
-Stash, Checkout, partially staging and MV"/>
+<meta name="twitter:title" content="Cython"/>
+<meta name="twitter:description" content="Li Yuanhao&#39;s Blog"/>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" integrity="sha256-UXesixbeLkB/UYxVTzuj/gg3+LMzgwAmg3zD+C4ZASQ=" crossorigin="anonymous">
@@ -92,17 +86,7 @@ Stash, Checkout, partially staging and MV"/>
 </style>
 
 
-    
-
-
-
-<link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css" />
-
-
-
-
-
-
+     
 
     
     <link rel="stylesheet" href="/css/Custom.css" />
@@ -158,147 +142,120 @@ Stash, Checkout, partially staging and MV"/>
         <section class="front">
           <div class="dream-max-width">
             
-<div class="ui relaxed centered grid dream-grid dream-grid-single">
+
+<header class="ui basic very padded segment dream-header">
   
+  <div class="ui small circular image">
+    <img src="/img/ichigo_square.jpg" alt="avatar" />
+  </div>
   
-  
-  
 
-  
-  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
-    
-    <div class="ui segment toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#stash">Stash</a></li>
-    <li><a href="#checkout">Checkout</a></li>
-    <li><a href="#restore">Restore</a></li>
-    <li><a href="#reset">Reset</a></li>
-    <li><a href="#revert">Revert</a></li>
-    <li><a href="#patch-staging">Patch staging</a></li>
-    <li><a href="#mv">MV</a></li>
-    <li><a href="#rm">RM</a></li>
-  </ul>
-</nav>
-    </div>
-    
+  <div class="content">
+    <h1 class="ui medium header">Li Yuanhao&#39;s Blog<span class="sub header">python yyds</span>
+    </h1>
 
-    
-  </aside>
-  
-  <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
-    <section class="ui segment">
-      <header>
-        <h1 class="ui large header">Git advanced technique<span class="sub header">
-            <span class="left">
-              @
-              
-                
-                  Erwin
-                
-              
-
-              | 
-                  <span data-format="luxon">2023-07-27T20:08:10&#43;01:00</span>
-                
-
-              | 2 minutes read
-
-              
-              | Update at
-                
-                  <span data-format="luxon">2023-12-14T12:09:39Z</span>
-                
-              
-            </span>
-
-            
-            <span class="dream-share">
-  <a href="#" class="save-as-image" title="Save as image" onclick="savePostAsImg()">
-    <i class="save icon"></i>
-  </a>
-  <a href="https://twitter.com/intent/tweet?text=Git%20advanced%20technique&url=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fgit_advance%2f" title="Twitter">
-    <i class="twitter icon"></i>
-  </a>
-  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fgit_advance%2f" title="Facebook">
-    <i class="facebook icon"></i>
-  </a>
-</span>
-
-            
-          </span>
-        </h1>
-      </header>
-
-      <article class="main">
-        
-        <img class="cover" src="/img/git.png" />
-        
-
-        <p>Some useful git tips:</p>
-<p>Stash, Checkout, partially staging and MV</p>
-<h2 id="stash">Stash</h2>
-<p>stash some files.</p>
-<p>Used when you need pull changes from remote repository, but you made some changes locally that are not ready to be commited.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git stash    <span style="color:#75715e"># only unstaged</span>
-</span></span><span style="display:flex;"><span>git stash -u <span style="color:#75715e"># include untracked</span>
-</span></span></code></pre></div><p>recover files</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git stash pop
-</span></span></code></pre></div><h2 id="checkout">Checkout</h2>
-<p>Change current branch:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout branch_name
-</span></span></code></pre></div><p>Clean all unstaged change and recover to last commit status:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git checkout .
-</span></span></code></pre></div><h2 id="restore">Restore</h2>
-<p>Restore the staging area status of the file, but not change the file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore --staged xxx
-</span></span></code></pre></div><p>Restore a file to staging area status. If have not staged any changes, restore from HEAD (staging area status is same as HEAD).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git restore xxx
-</span></span></code></pre></div><h2 id="reset">Reset</h2>
-<p>Withdraw a commit, retain changes</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --soft HEAD^
-</span></span></code></pre></div><p>Delete a commit, delete all changes in this commit</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git reset --hard HEAD
-</span></span></code></pre></div><h2 id="revert">Revert</h2>
-<h2 id="patch-staging">Patch staging</h2>
-<p>Stage part of a file.</p>
-<p>Firstly,</p>
-<pre tabindex="0"><code>git add -p file
-</code></pre><p>Then press e to edit mode.</p>
-<p>Then remove all changes you don&rsquo;t want to make in this commit:</p>
-<ol>
-<li>Remove <code>-</code> cahges by replacing <code>-</code> to &rsquo; &rsquo; (a space).</li>
-<li>Remove <code>+</code> changes by commenting whold line.</li>
-</ol>
-<h2 id="mv">MV</h2>
-<p>Move file xxx1 to xxx2. Both of the file and the git record will be removed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git mv xxx1 xxx2
-</span></span></code></pre></div><h2 id="rm">RM</h2>
-<p>Untrack a file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rm --cached xxx <span style="color:#75715e"># this is a change, need commit it to make it effective</span>
-</span></span></code></pre></div><p>Untrack all .DS_Store:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name .DS_Store -exec git rm --cached <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div>
-      </article>
-    </section>
-
-    
-
-    
-    <article class="ui segment utterances-comments" data-html2canvas-ignore>
-      <script
-        src="https://utteranc.es/client.js"
-        repo="erwinLiYH/utterances_repo"
-        issue-term="og:title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-      </script>
+    <article class="ui horizontal list">
+      
+      <a class="item" href="/en/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="/en/categories">
+        <i class="th list icon" title="All Categories"></i>
+      </a>
+      <a class="item" href="/en/tags">
+        <i class="tags icon" title="All Tags"></i>
+      </a>
     </article>
+
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+    
+
+    
+
+    
+    
+    
+          <div class="dream-tags">
+          
+          
+          
+            <a class="ui label" href="/en/tags/bugs/" title="Bugs">
+              Bugs
+            </a>
+          
+          
+          
+            <a class="ui label" href="/en/tags/caution/" title="Caution">
+              Caution
+            </a>
+          
+          
+          
+            <a class="ui label" href="/en/tags/instruction/" title="Instruction">
+              Instruction
+            </a>
+          
+          </div>
     
 
     
   </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid">
+  
+  
+  <div class="sixteen wide mobile eight wide tablet eight wide computer four wide large screen four wide widescreen column dream-column">
+    <article class="ui attached segment card dream-card">
+  
+  <a class="image" href="https://erwinliyh.github.io/en/posts/cython_basic/">
+    
+    <img src="/img/cython.jpg" alt="Cython_basic" />
+    
+  </a>
+  
+
+  
+  <div class="content">
+  
+    <h2 class="ui medium header">
+      <a href="/en/posts/cython_basic/">Cython_basic</a>
+    </h2>
+    <div class="meta">
+      <p class="date">
+        
+          <span data-format="luxon">2023-12-14T12:09:39Z</span>
+        
+      </p>
+    </div>
+    <div class="description">
+      <p>Cython is a programming language that makes writing C extensions for the Python language as easy as Python itself.</p>
+    </div>
+  </div>
+
+  <div class="extra content">
+    <div class="author">@&nbsp;Erwin</div>
+    <div class="reading-time">
+      <i class="clock icon"></i>3 minutes read</div>
+  </div>
+</article>
+
+  </div>
+  
+
+  
 </div>
 
 
@@ -604,34 +561,9 @@ Stash, Checkout, partially staging and MV"/>
 
 
 
-<script src="/js/scrollToTop.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-
-
-
-<script>
-  hljs.highlightAll()
-  setHighlightTheme()
-
-  function setHighlightTheme() {
-    var isDark = localStore.getItem('hugo-theme-dream-is-dark')
-    isDark = isDark ? isDark : window.defaultDark ? 'y' : isDark
-
-    var lightTheme = "github"
-    var darkTheme = "dracula"
-    var theme = isDark === 'y' ? darkTheme : lightTheme
-
-    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
-    $('pre').css('background', isDark === 'y' ? '#333' : '')
-  }
-</script>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js" integrity="sha256-uacRffSSMP9qpvNWhVmYLykBv9YKMA1d/VSIN1AmfyQ=" crossorigin="anonymous"></script>
-<script src="/js/post.js" defer></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/grid.js"></script>
 
 
     

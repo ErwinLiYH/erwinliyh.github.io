@@ -6,8 +6,22 @@
     <description>Recent content on Li Yuanhao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 27 Jul 2023 20:08:27 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 Dec 2023 12:09:39 +0000</lastBuildDate>
     <atom:link href="https://erwinliyh.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cython_basic</title>
+      <link>https://erwinliyh.github.io/en/posts/cython_basic/</link>
+      <pubDate>Thu, 14 Dec 2023 12:09:39 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/cython_basic/</guid>
+      <description>&lt;p&gt;Cython is a programming language that makes writing C extensions for the Python language as easy as Python itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python Package Problem</title>
+      <link>https://erwinliyh.github.io/en/posts/python_package/</link>
+      <pubDate>Thu, 14 Dec 2023 11:31:54 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/python_package/</guid>
+      <description>&lt;p&gt;Introduce the Python naming problem and Pip&amp;rsquo;s &amp;ndash;install-option problem.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>C_basics</title>
       <link>https://erwinliyh.github.io/en/posts/c_basics/</link>

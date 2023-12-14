@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cython on Li Yuanhao&#39;s Blog</title>
+    <link>https://erwinliyh.github.io/en/categories/cython/</link>
+    <description>Recent content in Cython on Li Yuanhao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 14 Dec 2023 12:09:39 +0000</lastBuildDate>
+    <atom:link href="https://erwinliyh.github.io/en/categories/cython/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cython_basic</title>
+      <link>https://erwinliyh.github.io/en/posts/cython_basic/</link>
+      <pubDate>Thu, 14 Dec 2023 12:09:39 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/cython_basic/</guid>
+      <description>&lt;p&gt;Cython is a programming language that makes writing C extensions for the Python language as easy as Python itself.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

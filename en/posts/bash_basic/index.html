@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Install DWM in Mint Linux | Li Yuanhao&#39;s Blog</title>
+    <title>Git advanced technique | Li Yuanhao&#39;s Blog</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -12,23 +12,23 @@
 
 
 
-<meta name="author" content="Author Name" />
-<meta name="description" content="Cut out summary from your post content here.
+<meta name="author" content="Erwin" />
+<meta name="description" content="Bash basic instruuction.
 " />
 
 
 
 <meta name="generator" content="Hugo 0.120.4">
 
-<link rel="canonical" href="https://erwinliyh.github.io/en/posts/dwm_mint/" />
+<link rel="canonical" href="https://erwinliyh.github.io/en/posts/bash_basic/" />
 
 
-<meta property="og:title" content="Install DWM in Mint Linux" />
-<meta property="og:description" content="Cut out summary from your post content here." />
+<meta property="og:title" content="Git advanced technique" />
+<meta property="og:description" content="Bash basic instruuction." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://erwinliyh.github.io/en/posts/dwm_mint/" /><meta property="og:image" content="https://erwinliyh.github.io"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-22T11:32:31+00:00" />
-<meta property="article:modified_time" content="2023-12-06T00:27:08+00:00" />
+<meta property="og:url" content="https://erwinliyh.github.io/en/posts/bash_basic/" /><meta property="og:image" content="https://erwinliyh.github.io"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-18T11:33:00+00:00" />
+<meta property="article:modified_time" content="2023-12-18T11:55:54+00:00" />
 
 
 
@@ -36,8 +36,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://erwinliyh.github.io"/>
 
-<meta name="twitter:title" content="Install DWM in Mint Linux"/>
-<meta name="twitter:description" content="Cut out summary from your post content here."/>
+<meta name="twitter:title" content="Git advanced technique"/>
+<meta name="twitter:description" content="Bash basic instruuction."/>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" integrity="sha256-UXesixbeLkB/UYxVTzuj/gg3+LMzgwAmg3zD+C4ZASQ=" crossorigin="anonymous">
@@ -162,20 +162,35 @@
   
 
   
+  <aside class="sixteen wide mobile sixteen wide tablet three wide computer column dream-single-aside">
+    
+    <div class="ui segment toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#special-variables">Special variables</a></li>
+    <li><a href="#for-loop">For loop</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    
+  </aside>
+  
   <div class="sixteen wide mobile sixteen wide tablet ten wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     <section class="ui segment">
       <header>
-        <h1 class="ui large header">Install DWM in Mint Linux<span class="sub header">
+        <h1 class="ui large header">Git advanced technique<span class="sub header">
             <span class="left">
               @
               
                 
-                  Author Name
+                  Erwin
                 
               
 
               | 
-                  <span data-format="luxon">2022-11-22T11:32:31Z</span>
+                  <span data-format="luxon">2023-12-18T11:33:00Z</span>
                 
 
               | 1 minute read
@@ -183,7 +198,7 @@
               
               | Update at
                 
-                  <span data-format="luxon">2023-12-06T00:27:08Z</span>
+                  <span data-format="luxon">2023-12-18T11:55:54Z</span>
                 
               
             </span>
@@ -193,10 +208,10 @@
   <a href="#" class="save-as-image" title="Save as image" onclick="savePostAsImg()">
     <i class="save icon"></i>
   </a>
-  <a href="https://twitter.com/intent/tweet?text=Install%20DWM%20in%20Mint%20Linux&url=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fdwm_mint%2f" title="Twitter">
+  <a href="https://twitter.com/intent/tweet?text=Git%20advanced%20technique&url=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fbash_basic%2f" title="Twitter">
     <i class="twitter icon"></i>
   </a>
-  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fdwm_mint%2f" title="Facebook">
+  <a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ferwinliyh.github.io%2fen%2fposts%2fbash_basic%2f" title="Facebook">
     <i class="facebook icon"></i>
   </a>
 </span>
@@ -208,23 +223,44 @@
 
       <article class="main">
         
-        <img class="cover" src="/img/mint.jpg" />
-        
 
-        <p>Cut out summary from your post content here.</p>
-<p>Deb serials:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone git://git.suckless.org/st
-</span></span><span style="display:flex;"><span>git clone git://git.suckless.org/dmenu
-</span></span><span style="display:flex;"><span>git clone git://git.suckless.org/dwm
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install libxinerama-dev <span style="color:#75715e"># for X11/extensions/Xinerama.h</span>
-</span></span><span style="display:flex;"><span>sudo apt install libx11-dev      <span style="color:#75715e"># for X11/Xlib.h</span>
-</span></span><span style="display:flex;"><span>sudo apt install libxft-dev      <span style="color:#75715e"># for X11/Xft/Xft.h</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd st
-</span></span><span style="display:flex;"><span>sudo make install
-</span></span><span style="display:flex;"><span>cd ../dwm
-</span></span><span style="display:flex;"><span>sudo make install
-</span></span><span style="display:flex;"><span>cd ../dmenu
-</span></span><span style="display:flex;"><span>sudo make install
+        <p>Bash basic instruuction.</p>
+<h2 id="special-variables">Special variables</h2>
+<p><code>$#</code>, length of parameters, like <code>len(sys.argv[1:])</code> in Python</p>
+<p><code>$0</code>, <code>$1</code> &hellip;, like <code>sys.argv[0]</code>, <code>sys.argv[1]</code>, &hellip; in Python</p>
+<p><code>$*</code>, all parameters string. Like <code>&quot;$0 $1 ...&quot;</code></p>
+<p><code>$@</code>, all parameters list. Like <code>&quot;$0&quot;, &quot;$1&quot;, ...</code></p>
+<h2 id="for-loop">For loop</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Number </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name in Alice Bob Charlie
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Hello, </span>$name<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>names<span style="color:#f92672">=(</span><span style="color:#e6db74">&#34;Alice&#34;</span> <span style="color:#e6db74">&#34;Bob&#34;</span> <span style="color:#e6db74">&#34;Charlie&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name in <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>names[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Hello, </span>$name<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#f92672">((</span> i<span style="color:#f92672">=</span>0; i&lt;5; i++ <span style="color:#f92672">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Number </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in /path/to/directory/*
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Processing </span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in <span style="color:#66d9ef">$(</span>ls /path/to/directory<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Found file </span>$file<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
 </span></span></code></pre></div>
       </article>
     </section>

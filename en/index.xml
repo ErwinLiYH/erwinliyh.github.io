@@ -6,10 +6,24 @@
     <description>Recent content on Li Yuanhao&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 14 Dec 2023 12:09:39 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Dec 2023 11:33:00 +0000</lastBuildDate>
     <atom:link href="https://erwinliyh.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cython_basic</title>
+      <title>Git advanced technique</title>
+      <link>https://erwinliyh.github.io/en/posts/bash_basic/</link>
+      <pubDate>Mon, 18 Dec 2023 11:33:00 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/bash_basic/</guid>
+      <description>&lt;p&gt;Bash basic instruuction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python Decorator</title>
+      <link>https://erwinliyh.github.io/en/posts/python_decorator/</link>
+      <pubDate>Thu, 14 Dec 2023 13:20:00 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/python_decorator/</guid>
+      <description>&lt;p&gt;Python decorator is just a &lt;strong&gt;Syntactic Sugar&lt;/strong&gt; which can add a wrapper for functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cython basic</title>
       <link>https://erwinliyh.github.io/en/posts/cython_basic/</link>
       <pubDate>Thu, 14 Dec 2023 12:09:39 +0000</pubDate>
       <guid>https://erwinliyh.github.io/en/posts/cython_basic/</guid>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Li Yuanhao&#39;s Blog</title>
+    <link>https://erwinliyh.github.io/en/categories/bash/</link>
+    <description>Recent content in bash on Li Yuanhao&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 18 Dec 2023 11:33:00 +0000</lastBuildDate>
+    <atom:link href="https://erwinliyh.github.io/en/categories/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git advanced technique</title>
+      <link>https://erwinliyh.github.io/en/posts/bash_basic/</link>
+      <pubDate>Mon, 18 Dec 2023 11:33:00 +0000</pubDate>
+      <guid>https://erwinliyh.github.io/en/posts/bash_basic/</guid>
+      <description>&lt;p&gt;Bash basic instruuction.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

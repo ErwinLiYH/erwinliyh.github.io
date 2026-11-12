@@ -1,0 +1,433 @@
+/* The welcome terminal and the docked profile share the same content nodes. */
+.profile-column {
+  position: relative;
+  z-index: 3;
+}
+.profile {
+  position: relative;
+  isolation: isolate;
+  width: min(820px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 288px;
+  column-gap: 54px;
+  row-gap: 15px;
+  padding: 100px 54px 72px;
+}
+.profile > [data-flight] {
+  position: relative;
+  grid-column: 2;
+  transform-origin: top left;
+}
+.terminal-shell {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow:
+    0 16px 60px #30394308,
+    0 2px 5px #30394304;
+  pointer-events: none;
+  font-family: var(--mono);
+  color: var(--muted);
+  overflow: hidden;
+}
+.terminal-titlebar {
+  height: 40px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  background: #ffffff;
+}
+.terminal-lights {
+  display: flex;
+  gap: 6px;
+}
+.terminal-lights i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b5bdc5;
+}
+.terminal-lights i:nth-child(2) {
+  background: #d0cec6;
+}
+.terminal-lights i:nth-child(3) {
+  background: #a5adb8;
+}
+.terminal-session {
+  color: var(--muted);
+  font-size: 0.6875rem;
+}
+.terminal-command {
+  position: absolute;
+  top: 60px;
+  left: 32px;
+  font-size: 0.875rem;
+}
+.terminal-footer {
+  position: absolute;
+  bottom: 23px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+.terminal-input {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.terminal-prompt {
+  white-space: nowrap;
+}
+.terminal-message {
+  min-height: 1.7em;
+  min-width: 27ch;
+  white-space: nowrap;
+}
+.terminal-footer .cursor {
+  animation-iteration-count: infinite;
+}
+.terminal-palette {
+  display: flex;
+  gap: 4px;
+}
+.terminal-palette i {
+  width: 16px;
+  height: 12px;
+  background: #465362;
+  border-radius: 1px;
+}
+.terminal-palette i:nth-child(2) {
+  background: #7e8da0;
+}
+.terminal-palette i:nth-child(3) {
+  background: #aebac5;
+}
+.terminal-palette i:nth-child(4) {
+  background: #cfccc2;
+}
+.terminal-palette i:nth-child(5) {
+  background: #a69bb5;
+}
+.terminal-palette i:nth-child(6) {
+  background: #d1d4d6;
+}
+.profile > .portrait-frame {
+  grid-column: 1;
+  grid-row: 1 / 6;
+  align-self: center;
+  justify-self: center;
+  width: 220px;
+  height: 220px;
+}
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 6px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--line);
+  filter: saturate(0.72);
+}
+.portrait-orbit {
+  position: absolute;
+  bottom: 13px;
+  right: 14px;
+  width: 17px;
+  height: 17px;
+  background: var(--ornament);
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+}
+.profile-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.profile h1 {
+  font-size: 2.625rem;
+  font-weight: 550;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+.name-dot {
+  color: var(--ornament);
+}
+.profile-role {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+}
+.profile-role > span {
+  color: var(--ink);
+}
+.profile-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.profile-research {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.9;
+}
+.fetch-label {
+  color: var(--purple);
+  margin-bottom: 5px;
+  font-size: 0.75rem;
+}
+.profile-research ul {
+  list-style: none;
+  padding: 0 0 0 13px;
+  margin: 0;
+  color: var(--text);
+}
+.profile-research li::before {
+  content: '-';
+  margin-right: 8px;
+  color: var(--ornament);
+}
+.profile-links {
+  display: flex;
+  gap: 23px;
+  font-size: 0.8125rem;
+}
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  gap: 7px;
+  color: var(--text);
+}
+.profile-links a:hover {
+  color: var(--accent);
+}
+.profile-links svg:last-child {
+  color: var(--ornament);
+}
+.prompt {
+  color: var(--accent);
+  margin-right: 3px;
+}
+.command {
+  color: var(--purple);
+}
+.terminal-flag {
+  color: var(--muted);
+}
+.cursor {
+  display: inline-block;
+  width: 5px;
+  height: 11px;
+  background: var(--ornament);
+  vertical-align: -1px;
+  margin-left: 6px;
+  animation: blink 1.15s step-end 4;
+}
+
+@media (min-width: 1100px) and (min-height: 760px) and (prefers-reduced-motion: no-preference) {
+  .js .profile-column {
+    position: sticky;
+    top: 124px;
+    align-self: start;
+    width: 288px;
+  }
+  .js .profile {
+    width: 820px;
+    margin-left: var(
+      --welcome-x,
+      calc((min(1120px, 100vw - 80px) - 820px) / 2)
+    );
+    transform: translateY(var(--welcome-y, 36px));
+  }
+  .js .flight-layout .profile {
+    display: block;
+    width: fit-content;
+    max-width: 288px;
+    margin-left: 0;
+    padding: 0;
+    transform: none;
+  }
+  .flight-layout [data-flight] {
+    will-change: transform;
+  }
+  .js .flight-layout .portrait-frame {
+    /* Fine-tune the optical balance after measuring the locale's text anchor. */
+    --portrait-optical-offset: -2px;
+    width: 124px;
+    height: 124px;
+    justify-self: start;
+    align-self: start;
+    margin: 0 0 27px;
+    margin-left: calc(
+      var(--portrait-dock-x, 0px) + var(--portrait-optical-offset)
+    );
+  }
+  .js:lang(zh) .flight-layout .portrait-frame {
+    --portrait-optical-offset: 0px;
+  }
+  .flight-layout .portrait-orbit {
+    bottom: 7px;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+  }
+  .flight-layout .profile-facts {
+    margin-top: 13px;
+  }
+  .flight-layout .profile-location {
+    margin-top: 10px;
+  }
+  .flight-layout .profile-research {
+    margin-top: 22px;
+  }
+  .flight-layout .profile-links {
+    margin-top: 18px;
+  }
+  .flight-layout .terminal-shell {
+    inset: auto;
+    left: var(--shell-x);
+    top: var(--shell-y);
+    width: var(--shell-width);
+    height: var(--shell-height);
+    opacity: var(--shell-opacity, 1);
+    transform: scale(var(--shell-scale, 1));
+    transform-origin: center;
+  }
+}
+@media (max-width: 1099px),
+  (max-height: 759px),
+  (prefers-reduced-motion: reduce) {
+  .profile {
+    column-gap: 30px;
+    padding-inline: 32px;
+    grid-template-columns: minmax(130px, 1fr) minmax(0, 288px);
+  }
+  .profile > .portrait-frame {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media (max-width: 699px) {
+  .profile {
+    --mobile-portrait-size: clamp(88px, 26vw, 156px);
+    display: grid;
+    grid-template-columns: var(--mobile-portrait-size) minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 14px;
+    padding: 92px 20px 112px;
+  }
+  .profile > [data-flight] {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+  .profile > .portrait-frame {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    align-self: center;
+    justify-self: start;
+    width: var(--mobile-portrait-size);
+    height: var(--mobile-portrait-size);
+    margin: 0;
+  }
+  .profile > .profile-heading {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+  .profile > .profile-facts {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .profile > .profile-location {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .profile-location svg {
+    flex-shrink: 0;
+  }
+  .portrait-frame img {
+    border-width: 3px;
+  }
+  .portrait-orbit {
+    bottom: 3px;
+    right: 4px;
+    width: 11px;
+    height: 11px;
+    border-width: 3px;
+  }
+  .profile h1 {
+    font-size: clamp(1.7rem, 5.8vw, 2.2rem);
+    letter-spacing: -0.04em;
+  }
+  .profile-eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .profile-role {
+    font-size: 0.875rem;
+  }
+  .profile-research {
+    font-size: 0.75rem;
+  }
+  .profile-links {
+    gap: 22px;
+    font-size: 0.875rem;
+  }
+  .profile-links a {
+    min-height: 44px;
+  }
+  .terminal-command {
+    top: 52px;
+    left: 20px;
+    font-size: 0.8125rem;
+  }
+  .terminal-footer {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    font-size: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .terminal-input {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+  }
+  .terminal-palette i {
+    width: 12px;
+    height: 10px;
+  }
+  .terminal-titlebar {
+    font-size: 0.6875rem;
+    padding-inline: 14px;
+  }
+}
+@media (max-width: 359px) {
+  .profile {
+    column-gap: 12px;
+  }
+  .profile h1 {
+    font-size: 1.5rem;
+  }
+}

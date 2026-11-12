@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import { locales, copy, pathFor, type Locale } from '../../data/site';
+export function getStaticPaths() {
+  return locales.flatMap((locale) =>
+    ['vibe-coding'].map((page) => ({ params: { locale, page } })),
+  );
+}
+const locale = Astro.params.locale as Locale;
+const page = 'vibe-coding';
+const t = copy[locale];
+const title = t.vibeTitle;
+const description = t.vibeDescription;
+---
+
+<Layout locale={locale} page={page} title={t[page]} description={description}>
+  <main class="collection-page" id="top">
+    <div id="content" tabindex="-1">
+      <p class="eyebrow collection-path">
+        <span class="prompt">❯</span> ~/{page}
+        <span class="cursor" aria-hidden="true"></span>
+      </p>
+      <h1>{title}</h1>
+      <p class="collection-description">{description}</p>
+      <div class="empty-state">
+        <div class="empty-art" aria-hidden="true">
+          <span class="empty-bracket">[</span>
+          <Icon name="spark" size={36} />
+          <span class="empty-bracket">]</span>
+        </div>
+        <h2>{t.emptyTitle}</h2>
+        <p>{t.emptyText}</p>
+        <span class="empty-status mono">
+          <span class="status-dot"></span>
+          {t.emptyStatus}
+        </span>
+      </div>
+      <a class="text-link return-link" href={pathFor(locale)}>
+        <span aria-hidden="true">←</span>
+        {t.returnHome}
+      </a>
+    </div>
+  </main>
+</Layout>

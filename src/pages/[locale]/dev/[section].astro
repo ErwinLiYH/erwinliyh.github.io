@@ -1,0 +1,16 @@
+---
+import DevPage from '../../../components/DevPage.astro';
+import { locales, type Locale } from '../../../data/site';
+import { devSections, type DevSection } from '../../../data/dev';
+export function getStaticPaths() {
+  return locales.flatMap((locale) =>
+    devSections
+      .filter((section) => section !== 'pi')
+      .map((section) => ({ params: { locale, section } })),
+  );
+}
+const locale = Astro.params.locale as Locale;
+const section = Astro.params.section as DevSection;
+---
+
+<DevPage locale={locale} section={section} />

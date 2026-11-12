@@ -1,0 +1,123 @@
+---
+import '../styles/profile.css';
+import '../styles/home.css';
+import '../styles/global.css';
+import { base, copy, pathFor, type Locale, type PageName } from '../data/site';
+import Icon from '../components/Icon.astro';
+interface Props {
+  locale: Locale;
+  page?: PageName;
+  title?: string;
+  description?: string;
+  subpage?: string;
+}
+const {
+  locale,
+  page = 'about',
+  title,
+  description,
+  subpage = '',
+} = Astro.props;
+const localizedPath = (language: Locale) =>
+  `${pathFor(language, page)}${subpage}`;
+const t = copy[locale];
+const pageTitle = title
+  ? `${title} — ${t.name}`
+  : `${t.name} — ${t.siteTagline}`;
+const other = locale === 'en' ? 'zh' : 'en';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eeede8" />
+    <meta name="description" content={description || t.intro} />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={new URL(localizedPath('en'), Astro.site)}
+    />
+    <link
+      rel="alternate"
+      hreflang="zh-CN"
+      href={new URL(localizedPath('zh'), Astro.site)}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localizedPath('en'), Astro.site)}
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description || t.intro} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      {t.skip}
+    </a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          class="wordmark"
+          href={pathFor(locale)}
+          aria-label={`${t.name} — ${locale === 'zh' ? '主页' : 'Home'}`}
+        >
+          <span class="brand-mark">
+            yl<span>.</span>
+          </span>
+          <span class="brand-name">{t.name}</span>
+        </a>
+        <nav aria-label={locale === 'zh' ? '主导航' : 'Main navigation'}>
+          {(['about', 'dev', 'vibe-coding'] as const).map((item) => (
+            <a
+              class:list={['nav-link', { active: page === item }]}
+              aria-current={page === item ? 'page' : undefined}
+              href={pathFor(locale, item)}
+            >
+              {t[item]}
+            </a>
+          ))}
+        </nav>
+        <a
+          class="language-switch"
+          href={localizedPath(other)}
+          lang={other === 'zh' ? 'zh-CN' : 'en'}
+          hreflang={other === 'zh' ? 'zh-CN' : 'en'}
+          aria-label={locale === 'en' ? '切换到中文' : 'Switch to English'}
+          data-language={other}
+        >
+          <span class:list={{ selected: locale === 'en' }}>EN</span>
+          <span class="language-divider">/</span>
+          <span class:list={{ selected: locale === 'zh' }}>中</span>
+        </a>
+      </div>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div>
+        <span class="footer-dot"></span>
+        <span>{t.footer}</span>
+      </div>
+      <a href="#top">
+        {t.backTop}
+        <span aria-hidden="true">↑</span>
+      </a>
+      <span class="footer-signature">
+        {t.name} <Icon name="spark" size={14} />
+      </span>
+    </footer>
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

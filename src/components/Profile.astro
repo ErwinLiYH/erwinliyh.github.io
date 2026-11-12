@@ -1,0 +1,105 @@
+---
+import { base, copy, type Locale } from '../data/site';
+import Icon from './Icon.astro';
+const { locale } = Astro.props as { locale: Locale };
+const t = copy[locale];
+---
+
+<aside
+  class="profile-column"
+  aria-label={locale === 'en' ? 'Personal profile' : '个人信息'}
+>
+  <div class="profile" id="profile">
+    <div class="terminal-shell" aria-hidden="true">
+      <div class="terminal-titlebar">
+        <span class="terminal-lights">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+        <span>yuanhao@home: ~</span>
+        <span class="terminal-session">01</span>
+      </div>
+      <p class="terminal-command">
+        <span class="prompt">❯</span> <span class="command">yhintro</span>
+        <span class="terminal-flag"> --welcome</span>
+      </p>
+      <div class="terminal-footer">
+        <div class="terminal-input">
+          <span class="terminal-prompt">
+            ~/life <span class="prompt">❯</span>
+          </span>
+          <span class="terminal-message">
+            <span data-terminal-hint>{t.terminalHint}</span>
+            <span class="cursor"></span>
+          </span>
+        </div>
+        <span class="terminal-palette">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </div>
+    </div>
+    <div class="portrait-frame" data-flight="portrait">
+      <img
+        src={`${base}/images/portrait.jpg`}
+        alt={t.name}
+        width="220"
+        height="220"
+        fetchpriority="high"
+      />
+      <span class="portrait-orbit" aria-hidden="true"></span>
+    </div>
+    <div class="profile-heading" data-flight>
+      <p class="eyebrow profile-eyebrow">
+        <span class="status-dot"></span> RESEARCHER & BUILDER
+      </p>
+      <h1>
+        <span class="profile-name">{t.name}</span>
+        <span class="name-dot">.</span>
+      </h1>
+    </div>
+    <div class="profile-facts" data-flight>
+      <p class="profile-role">
+        {t.role}
+        <br />
+        <span>{t.university}</span>
+      </p>
+    </div>
+    <p class="profile-location" data-flight>
+      <Icon name="pin" size={14} />
+      {t.location}
+    </p>
+    <div class="profile-research" data-flight>
+      <p class="fetch-label">
+        <span class="prompt">❯</span>{' '}
+        {locale === 'zh' ? '研究方向' : 'research'}
+      </p>
+      <ul>
+        <li>AI-native networks</li>
+        <li>Reinforcement learning</li>
+        <li>LLMs for networks</li>
+      </ul>
+    </div>
+    <div class="profile-links" data-flight>
+      <a href="mailto:yl1118@exeter.ac.uk">
+        <Icon name="mail" size={16} />
+        {locale === 'zh' ? '邮箱' : 'Email'}
+        <Icon name="arrow" size={13} />
+      </a>
+      <a
+        href="https://github.com/ErwinLiYH"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="github" size={16} />
+        GitHub
+        <Icon name="arrow" size={13} />
+      </a>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,53 @@
+---
+import { devCopy } from '../data/dev';
+import type { Locale } from '../data/site';
+interface Props {
+  code: string;
+  label: string;
+  locale: Locale;
+  wrap?: boolean;
+}
+const { code, label, locale, wrap = false } = Astro.props;
+const t = devCopy[locale];
+---
+
+<div class:list={['code-block', { 'code-wrap': wrap }]}>
+  <div class="code-toolbar">
+    <span>{label}</span>
+    <button
+      type="button"
+      data-copy-code
+      data-copied={t.copied}
+      data-failed={t.copyFailed}
+      aria-label={`${t.copy} · ${label}`}
+    >
+      <span aria-live="polite">{t.copy}</span>
+    </button>
+  </div>
+  <pre tabindex="0" aria-label={label}><code>{code}</code></pre>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-copy-code]')
+    .forEach((button) => {
+      const status = button.querySelector('span')!;
+      const label = status.textContent;
+      let timer: number | undefined;
+      button.addEventListener('click', async () => {
+        window.clearTimeout(timer);
+        try {
+          const code =
+            button.closest('.code-block')!.querySelector('code')!.textContent ||
+            '';
+          await navigator.clipboard.writeText(code);
+          status.textContent = button.dataset.copied!;
+        } catch {
+          status.textContent = button.dataset.failed!;
+        }
+        timer = window.setTimeout(() => {
+          status.textContent = label;
+        }, 2000);
+      });
+    });
+</script>

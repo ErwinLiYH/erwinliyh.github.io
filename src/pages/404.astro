@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { pathFor } from '../data/site';
+---
+
+<Layout locale="en" title="Page not found">
+  <main id="top" class="collection-page">
+    <div id="content">
+      <p class="eyebrow">404 / PATH NOT FOUND</p>
+      <h1>A small detour.</h1>
+      <p class="collection-description">
+        This page doesn’t exist. Let’s head back.
+      </p>
+      <a class="text-link" href={pathFor('en')}>
+        Back to about ↗
+      </a>
+    </div>
+  </main>
+</Layout>

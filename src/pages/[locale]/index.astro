@@ -1,0 +1,13 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import About from '../../components/About.astro';
+import { locales, type Locale } from '../../data/site';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+---
+
+<Layout locale={locale}>
+  <About locale={locale} />
+</Layout>

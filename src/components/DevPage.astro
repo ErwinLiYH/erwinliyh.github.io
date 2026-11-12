@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CodeBlock from './CodeBlock.astro';
+import {
+  devCopy,
+  devSections,
+  devPath,
+  pluginGroups,
+  installCommand,
+  grillingSkills,
+  systemPrompt,
+  type DevSection,
+} from '../data/dev';
+import type { Locale } from '../data/site';
+import '../styles/dev.css';
+interface Props {
+  locale: Locale;
+  section?: DevSection;
+}
+const { locale, section = 'pi' } = Astro.props;
+const t = devCopy[locale];
+const title = t.pages[section];
+const description = t.descriptions[section];
+---
+
+<Layout
+  locale={locale}
+  page="dev"
+  subpage={section === 'pi' ? '' : `${section}/`}
+  title={`${title} · Dev`}
+  description={description}
+>
+  <main class="dev-layout" id="top">
+    <aside class="dev-sidebar" data-dev-sidebar>
+      <p class="eyebrow dev-sidebar-title">
+        ~/dev <span aria-hidden="true">/</span>
+      </p>
+      <button
+        class="dev-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="dev-navigation"
+      >
+        <span>
+          {t.menu}
+          <span class="dev-menu-current"> / {title}</span>
+        </span>
+        <span class="dev-menu-symbol" aria-hidden="true">
+          +
+        </span>
+      </button>
+      <nav id="dev-navigation" aria-label={t.directory}>
+        <p class="dev-nav-group">
+          <span class="status-dot"></span> AI agent
+        </p>
+        <ul>
+          {devSections.map((item) => (
+            <li>
+              <a
+                href={devPath(locale, item)}
+                aria-current={section === item ? 'page' : undefined}
+              >
+                <span>{t.pages[item]}</span>
+                <span class="dev-nav-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+    <article class="dev-article" id="content" tabindex="-1">
+      <header class="dev-page-header">
+        <p class="eyebrow">
+          <span class="prompt">❯</span> dev / AI agent
+        </p>
+        <h1>
+          {title}
+          <span class="name-dot">.</span>
+        </h1>
+        <p class="dev-lead">{description}</p>
+      </header>
+      {section === 'pi' && (
+        <>
+          <section class="dev-section" id="install">
+            <h2>
+              <span class="dev-index">00</span>
+              {t.install}
+            </h2>
+            <p>{t.installNote}</p>
+            <div class="dev-source-links">
+              <a
+                href="https://pi.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.website} ↗
+              </a>
+              <a
+                href="https://github.com/earendil-works/pi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.repo} ↗
+              </a>
+            </div>
+            <CodeBlock
+              locale={locale}
+              label="macOS / Linux"
+              code="curl -fsSL https://pi.dev/install.sh | sh"
+            />
+          </section>
+          <nav
+            class="dev-jump-links"
+            aria-label={locale === 'zh' ? '插件分组' : 'Plugin groups'}
+          >
+            {pluginGroups.map((group) => (
+              <a href={`#${group.id}`}>
+                {group.title} <span aria-hidden="true">↓</span>
+              </a>
+            ))}
+          </nav>
+          {pluginGroups.map((group, index) => (
+            <section class="dev-section" id={group.id}>
+              <h2>
+                <span class="dev-index">0{index + 1}</span>
+                {group.title}
+              </h2>
+              <p>{group.description[locale]}</p>
+              <ul class="dev-resource-list">
+                {group.plugins.map((plugin) => (
+                  <li>
+                    <h3>{plugin.name}</h3>
+                    <p>{plugin.description[locale]}</p>
+                    <div class="dev-source-links">
+                      <a
+                        href={`https://www.npmjs.com/package/${plugin.package}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${plugin.name} · ${t.package}`}
+                      >
+                        {t.package} ↗
+                      </a>
+                      <a
+                        href={plugin.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${plugin.name} · ${t.repo}`}
+                      >
+                        {t.repo} ↗
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <CodeBlock
+                locale={locale}
+                label={`${t.installGroup} · ${group.title}`}
+                code={installCommand(group.plugins)}
+              />
+            </section>
+          ))}
+          <p class="dev-note">{t.safety}</p>
+        </>
+      )}
+      {section === 'system-prompt' && (
+        <section class="dev-section dev-prompt-section">
+          <p>{t.promptContext}</p>
+          <p>{t.subagentRationale}</p>
+          <div class="dev-source-links">
+            <a
+              href="https://arxiv.org/abs/2512.08296v3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kim et al. · Towards a Science of Scaling Agent Systems ↗
+            </a>
+          </div>
+          <CodeBlock
+            locale={locale}
+            label={t.promptPath}
+            code="~/.pi/agent/APPEND_SYSTEM.md"
+          />
+          <p>{t.promptUsage}</p>
+          <CodeBlock
+            locale={locale}
+            label="APPEND_SYSTEM.md"
+            code={systemPrompt[locale]}
+            wrap
+          />
+        </section>
+      )}
+      {section === 'skills' && (
+        <>
+          <p class="dev-note">{t.skillsNote}</p>
+          <section class="dev-section" id="grilling">
+            <h2>
+              <span class="dev-index">01</span>Grilling & domain modeling
+            </h2>
+            <p>{t.grillingIntro}</p>
+            <div class="dev-source-links">
+              <a
+                href="https://github.com/mattpocock/skills"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                mattpocock/skills ↗
+              </a>
+            </div>
+            <ul class="dev-resource-list">
+              {grillingSkills.map((skill) => (
+                <li>
+                  <h3>
+                    <a
+                      href={`https://github.com/mattpocock/skills/tree/main/skills/${skill.category}/${skill.name}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {skill.name}{' '}
+                      <span class="dev-inline-arrow" aria-hidden="true">
+                        ↗
+                      </span>
+                    </a>
+                  </h3>
+                  <p>{skill.description[locale]}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section class="dev-section" id="nature-skills">
+            <h2>
+              <span class="dev-index">02</span>Nature Skills
+            </h2>
+            <p>{t.natureIntro}</p>
+            <p>{t.natureNote}</p>
+            <div class="dev-source-links">
+              <a
+                href="https://github.com/yuan1z0825/nature-skills"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.repo} ↗
+              </a>
+              <a
+                href="https://yuan1z0825.github.io/nature-skills/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.website} ↗
+              </a>
+            </div>
+          </section>
+        </>
+      )}
+      {section === 'custom-skills' && (
+        <section class="dev-placeholder">
+          <span class="mono dev-placeholder-mark" aria-hidden="true">
+            [ … ]
+          </span>
+          <h2>{t.later}</h2>
+          <p>{t.laterText}</p>
+        </section>
+      )}
+    </article>
+  </main>
+</Layout>
+
+<script>
+  const sidebar = document.querySelector<HTMLElement>('[data-dev-sidebar]');
+  const toggle = sidebar?.querySelector<HTMLButtonElement>('.dev-menu-toggle');
+  if (sidebar && toggle) {
+    const narrow = window.matchMedia('(max-width: 799px)');
+    const setOpen = (open: boolean) => {
+      sidebar.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
+    sidebar.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && narrow.matches) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    narrow.addEventListener('change', () => setOpen(false));
+  }
+</script>

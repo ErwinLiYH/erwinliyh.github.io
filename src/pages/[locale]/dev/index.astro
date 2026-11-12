@@ -1,0 +1,10 @@
+---
+import DevPage from '../../../components/DevPage.astro';
+import { locales, type Locale } from '../../../data/site';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+---
+
+<DevPage locale={locale} />

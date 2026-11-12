@@ -304,27 +304,42 @@
   .js .dev-menu-toggle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    min-height: 44px;
-    padding: 4px 0;
-    gap: 12px;
-    border: 0;
-    background: transparent;
+    min-height: 56px;
+    padding: 8px;
+    gap: 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
     color: var(--ink);
     text-align: left;
     font: inherit;
     cursor: pointer;
   }
   .dev-menu-current {
-    color: var(--muted);
+    color: var(--ink);
+    font-weight: 550;
   }
-  .dev-menu-symbol {
-    font: 1.25rem var(--mono);
-    transition: transform 0.2s;
+  .dev-menu-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
   }
-  .is-open .dev-menu-symbol {
-    transform: rotate(45deg);
+  .dev-menu-toggle:hover,
+  .is-open .dev-menu-toggle {
+    border-color: var(--accent);
+  }
+  .dev-menu-close,
+  .is-open .dev-menu-bars {
+    display: none;
+  }
+  .is-open .dev-menu-close {
+    display: block;
   }
   .js .dev-sidebar nav {
     display: none;

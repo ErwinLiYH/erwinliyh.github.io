@@ -29,12 +29,12 @@ export const copy = {
     researchNote: 'Three connected threads in my research.',
     interests: [
       {
-        title: 'AI-native networks',
-        text: 'Learning-driven resource allocation and adaptive RAN slicing for next-generation networks.',
-      },
-      {
         title: 'Reinforcement learning',
         text: 'Multi-agent decision-making and structural generalization in continuous control.',
+      },
+      {
+        title: 'AI-native networks',
+        text: 'Learning-driven resource allocation and adaptive RAN slicing for next-generation networks.',
       },
       {
         title: 'Language model agents',
@@ -97,12 +97,12 @@ export const copy = {
     researchNote: '三条彼此交织的研究线索。',
     interests: [
       {
-        title: 'AI 原生网络',
-        text: '面向下一代网络，研究学习驱动的资源分配与自适应无线接入网切片。',
-      },
-      {
         title: '强化学习',
         text: '探索多智能体决策，以及连续控制任务中的结构泛化能力。',
+      },
+      {
+        title: 'AI 原生网络',
+        text: '面向下一代网络，研究学习驱动的资源分配与自适应无线接入网切片。',
       },
       {
         title: '语言模型智能体',

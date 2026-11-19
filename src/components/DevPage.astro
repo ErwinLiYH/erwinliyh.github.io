@@ -5,14 +5,15 @@ import {
   devCopy,
   devSections,
   devPath,
-  pluginGroups,
+  piSetups,
   installCommand,
   grillingSkills,
   systemPrompt,
   type DevSection,
 } from '../data/dev';
 import type { Locale } from '../data/site';
-import '../styles/dev.css';
+import DirectorySidebar from './DirectorySidebar.astro';
+import TerminalPath from './TerminalPath.astro';
 interface Props {
   locale: Locale;
   section?: DevSection;
@@ -31,147 +32,165 @@ const description = t.descriptions[section];
   description={description}
 >
   <main class="dev-layout" id="top">
-    <aside class="dev-sidebar" data-dev-sidebar>
-      <p class="eyebrow dev-sidebar-title">
-        ~/dev <span aria-hidden="true">/</span>
-      </p>
-      <button
-        class="dev-menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="dev-navigation"
-        aria-label={t.menu}
-        title={t.menu}
-      >
-        <span class="dev-menu-icon" aria-hidden="true">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          >
-            <path class="dev-menu-bars" d="M4 6h16M4 12h16M4 18h16" />
-            <path class="dev-menu-close" d="m6 6 12 12M18 6 6 18" />
-          </svg>
-        </span>
-        <span class="dev-menu-current">{title}</span>
-      </button>
-      <nav id="dev-navigation" aria-label={t.directory}>
-        <p class="dev-nav-group">
-          <span class="status-dot"></span> AI agent
-        </p>
-        <ul>
-          {devSections.map((item) => (
-            <li>
-              <a
-                href={devPath(locale, item)}
-                aria-current={section === item ? 'page' : undefined}
-              >
-                <span>{t.pages[item]}</span>
-                <span class="dev-nav-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </aside>
+    <DirectorySidebar
+      directory="dev"
+      group="AI agent"
+      label={t.directory}
+      menu={t.menu}
+      title={title}
+      items={devSections.map((item) => ({
+        href: devPath(locale, item),
+        label: t.pages[item],
+        current: section === item ? 'page' : undefined,
+      }))}
+    />
     <article class="dev-article" id="content" tabindex="-1">
       <header class="dev-page-header">
-        <p class="eyebrow">
-          <span class="prompt">❯</span> dev / AI agent
-        </p>
+        <TerminalPath path="dev/AI agent" />
         <h1>
           {title}
           <span class="name-dot">.</span>
         </h1>
+        {section === 'pi' && (
+          <div
+            class="pi-switch"
+            role="radiogroup"
+            aria-label={locale === 'zh' ? 'Pi 使用环境' : 'Use Pi in'}
+          >
+            {piSetups.map(({ id, label }) => (
+              <label>
+                <input
+                  type="radio"
+                  name="pi-environment"
+                  value={id}
+                  aria-controls={`setup-${id}`}
+                  checked={id === 'terminal'}
+                />
+                <span>{label}</span>
+              </label>
+            ))}
+          </div>
+        )}
         <p class="dev-lead">{description}</p>
       </header>
       {section === 'pi' && (
         <>
-          <section class="dev-section" id="install">
-            <h2>
-              <span class="dev-index">00</span>
-              {t.install}
-            </h2>
-            <p>{t.installNote}</p>
-            <div class="dev-source-links">
-              <a
-                href="https://pi.dev"
-                target="_blank"
-                rel="noopener noreferrer"
+          {piSetups.map(({ id, groups }) => (
+            <div id={`setup-${id}`}>
+              {id === 't3-code' && (
+                <section class="dev-section dev-t3-intro">
+                  <h2>
+                    {locale === 'zh'
+                      ? '在 T3 Code 中使用 Pi'
+                      : 'Using Pi in T3 Code'}
+                  </h2>
+                  <p>
+                    <a href="https://t3.codes">T3 Code</a>
+                    {locale === 'zh'
+                      ? ' 是一款用于管理编程 Agent 的开源桌面应用。你可以从自己的电脑连接远程开发环境，使用运行在远程主机上的 Pi。多个 Agent 同时工作时，你可以在同一界面查看各自的进度，并切换到需要你回应的会话。'
+                      : ' is an open-source desktop app for managing coding agents. Connect to a remote development environment to use Pi on that host. When several agents are running, you can check each agent’s progress in one place and switch to the session that needs your input.'}
+                  </p>
+                  <p>
+                    {locale === 'zh'
+                      ? 'T3 Code 为 Pi 提供了额外的工具，例如 Pi 可以直接把任务交给子代理，无需再安装 pi-subagents 插件。'
+                      : 'T3 Code gives Pi extra tools so you can skip some plugins: for example, Pi can delegate tasks to subagents without the pi-subagents plugin.'}
+                  </p>
+                  <p>
+                    {locale === 'zh' ? '前往' : 'Visit the '}
+                    <a href="https://t3.codes/download">
+                      {locale === 'zh'
+                        ? '官方下载页'
+                        : 'official download page'}
+                    </a>
+                    {locale === 'zh'
+                      ? '，选择适合你操作系统的版本。'
+                      : ' to get the version for your operating system.'}
+                  </p>
+                </section>
+              )}
+              <section
+                class="dev-section"
+                id={id === 'terminal' ? 'install' : 't3-install'}
               >
-                {t.website} ↗
-              </a>
-              <a
-                href="https://github.com/earendil-works/pi"
-                target="_blank"
-                rel="noopener noreferrer"
+                <h2>
+                  <span class="dev-index">00</span>
+                  {t.install}
+                </h2>
+                <p>{t.installNote}</p>
+                <div class="dev-source-links">
+                  <a
+                    href="https://pi.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.website} ↗
+                  </a>
+                  <a
+                    href="https://github.com/earendil-works/pi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t.repo} ↗
+                  </a>
+                </div>
+                <CodeBlock
+                  locale={locale}
+                  label="macOS / Linux"
+                  code="curl -fsSL https://pi.dev/install.sh | sh"
+                />
+              </section>
+              <nav
+                class="dev-jump-links"
+                aria-label={locale === 'zh' ? '插件分组' : 'Plugin groups'}
               >
-                {t.repo} ↗
-              </a>
-            </div>
-            <CodeBlock
-              locale={locale}
-              label="macOS / Linux"
-              code="curl -fsSL https://pi.dev/install.sh | sh"
-            />
-          </section>
-          <nav
-            class="dev-jump-links"
-            aria-label={locale === 'zh' ? '插件分组' : 'Plugin groups'}
-          >
-            {pluginGroups.map((group) => (
-              <a href={`#${group.id}`}>
-                {group.title} <span aria-hidden="true">↓</span>
-              </a>
-            ))}
-          </nav>
-          {pluginGroups.map((group, index) => (
-            <section class="dev-section" id={group.id}>
-              <h2>
-                <span class="dev-index">0{index + 1}</span>
-                {group.title}
-              </h2>
-              <p>{group.description[locale]}</p>
-              <ul class="dev-resource-list">
-                {group.plugins.map((plugin) => (
-                  <li>
-                    <h3>{plugin.name}</h3>
-                    <p>{plugin.description[locale]}</p>
-                    <div class="dev-source-links">
-                      <a
-                        href={`https://www.npmjs.com/package/${plugin.package}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${plugin.name} · ${t.package}`}
-                      >
-                        {t.package} ↗
-                      </a>
-                      <a
-                        href={plugin.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${plugin.name} · ${t.repo}`}
-                      >
-                        {t.repo} ↗
-                      </a>
-                    </div>
-                  </li>
+                {groups.map((group) => (
+                  <a href={`#${group.id}`}>
+                    {group.title} <span aria-hidden="true">↓</span>
+                  </a>
                 ))}
-              </ul>
-              <CodeBlock
-                locale={locale}
-                label={`${t.installGroup} · ${group.title}`}
-                code={installCommand(group.plugins)}
-              />
-            </section>
+              </nav>
+              {groups.map((group, index) => (
+                <section class="dev-section" id={group.id}>
+                  <h2>
+                    <span class="dev-index">0{index + 1}</span>
+                    {group.title}
+                  </h2>
+                  <p>{group.description[locale]}</p>
+                  <ul class="dev-resource-list">
+                    {group.plugins.map((plugin) => (
+                      <li>
+                        <h3>{plugin.name}</h3>
+                        <p>{plugin.description[locale]}</p>
+                        <div class="dev-source-links">
+                          <a
+                            href={`https://www.npmjs.com/package/${plugin.package}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${plugin.name} · ${t.package}`}
+                          >
+                            {t.package} ↗
+                          </a>
+                          <a
+                            href={plugin.repo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${plugin.name} · ${t.repo}`}
+                          >
+                            {t.repo} ↗
+                          </a>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <CodeBlock
+                    locale={locale}
+                    label={`${t.installGroup} · ${group.title}`}
+                    code={installCommand(group.plugins)}
+                  />
+                </section>
+              ))}
+            </div>
           ))}
-          <p class="dev-note">{t.safety}</p>
         </>
       )}
       {section === 'system-prompt' && (
@@ -275,25 +294,3 @@ const description = t.descriptions[section];
     </article>
   </main>
 </Layout>
-
-<script>
-  const sidebar = document.querySelector<HTMLElement>('[data-dev-sidebar]');
-  const toggle = sidebar?.querySelector<HTMLButtonElement>('.dev-menu-toggle');
-  if (sidebar && toggle) {
-    const narrow = window.matchMedia('(max-width: 799px)');
-    const setOpen = (open: boolean) => {
-      sidebar.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    };
-    toggle.addEventListener('click', () =>
-      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
-    );
-    sidebar.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && narrow.matches) {
-        setOpen(false);
-        toggle.focus();
-      }
-    });
-    narrow.addEventListener('change', () => setOpen(false));
-  }
-</script>

@@ -91,12 +91,11 @@
   white-space: nowrap;
 }
 .terminal-message {
+  display: inline-flex;
+  align-items: center;
   min-height: 1.7em;
   min-width: 27ch;
   white-space: nowrap;
-}
-.terminal-footer .cursor {
-  animation-iteration-count: infinite;
 }
 .terminal-palette {
   display: flex;
@@ -233,12 +232,10 @@
 }
 .cursor {
   display: inline-block;
-  width: 5px;
-  height: 11px;
+  width: 1ch;
+  height: 1em;
   background: var(--ornament);
-  vertical-align: -1px;
-  margin-left: 6px;
-  animation: blink 1.15s step-end 4;
+  animation: blink 1.15s step-end infinite;
 }
 
 @media (min-width: 1100px) and (min-height: 760px) and (prefers-reduced-motion: no-preference) {

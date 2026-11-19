@@ -58,7 +58,7 @@ BASE_PATH=/my-personal-web npm run preview
 字号使用 `rem`，可在 `src/styles/global.css` 的 `:root` 中统一调节 `font-size`，当前为 `110%`。
 
 Dev 提供 Pi 配置、系统提示词、社区 Skills 和 Custom skills 四个页面，其中 Custom skills 暂时留空。
-Vibe Coding 页面仍为空状态，没有示例项目。
+Vibe Coding 页面展示 remote-copy 项目及其传输拓扑图。
 论文状态依据提供的 CV 整理，未独立核验，公开前请确认。
 中文版使用姓名“李元昊”，英文版使用“Yuanhao Li”，统一在 `src/data/site.ts` 中维护。
 网站不展示生日和性别，也不包含原始 CV PDF。

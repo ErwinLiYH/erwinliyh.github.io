@@ -65,12 +65,14 @@ export const copy = {
     devTitle: 'A considered toolkit.',
     devDescription:
       'Tools, workflows, and the small things that make building better.',
-    vibeTitle: 'From a thought to a thing.',
+    vibeTitle: 'Gallery',
     vibeDescription: 'A space for experiments and things built with AI.',
-    emptyTitle: 'A little room for what’s next.',
-    emptyText: 'Nothing here yet. This space is intentionally left open.',
+    remoteCopyIntro:
+      'One command copies files and directory contents between your computer, SSH servers, and Docker containers on those servers. Press Tab to complete remote paths and container names as you type.',
+    remoteCopyRepo: 'View on GitHub',
+    remoteCopyTopology:
+      'Transfer routes between the local machine, SSH servers, and their Docker containers',
     returnHome: 'Back to about',
-    emptyStatus: '0 entries · room to grow',
     skillGroups: [
       'Programming & ML',
       'High-performance computing',
@@ -131,12 +133,13 @@ export const copy = {
     elsewhere: '在这些地方找到我',
     devTitle: '让创造更顺手。',
     devDescription: '工具、工作流，以及让开发更从容的小细节。',
-    vibeTitle: '从一个想法，到一件作品。',
+    vibeTitle: '作品集',
     vibeDescription: '留给 AI 辅助开发、实验与作品的一片空间。',
-    emptyTitle: '为下一个想法留白。',
-    emptyText: '这里暂时没有内容，留待之后慢慢填入。',
+    remoteCopyIntro:
+      '用一条 ry 命令，就能在本机、SSH 服务器和服务器上的 Docker 容器之间复制文件或目录内容。输入时按 Tab，即可补全远程路径和容器名。',
+    remoteCopyRepo: '查看 GitHub 仓库',
+    remoteCopyTopology: '本机、SSH 服务器及其 Docker 容器之间的文件传输路径',
     returnHome: '返回个人主页',
-    emptyStatus: '0 条内容 · 静待生长',
     skillGroups: ['编程与机器学习', '高性能计算', 'AI 辅助开发'],
   },
 } as const;

@@ -249,68 +249,47 @@ img {
   text-underline-offset: 4px;
 }
 .collection-page {
-  max-width: 1000px;
-  margin: auto;
-  padding: 104px 40px 80px;
-  min-height: calc(100svh - 160px);
+  min-width: 0;
 }
 .collection-path {
   display: flex;
-  gap: 10px;
   align-items: center;
   margin-bottom: 24px;
   font-size: 0.875rem;
   letter-spacing: 0.03em;
 }
+.collection-path .prompt {
+  margin-right: 1ch;
+}
 .collection-page h1 {
-  font-size: clamp(2.25rem, 4.84vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 500;
   letter-spacing: -0.05em;
 }
-.collection-description {
-  margin-top: 18px;
-  font-size: 1.125rem;
+.vibe-project {
+  display: grid;
+  align-items: start;
+  gap: 24px;
+  margin: 24px 0 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
 }
-.empty-state {
-  margin: 64px 0 32px;
-  padding: 58px 24px 42px;
-  text-align: center;
-  border-block: 1px solid var(--line);
-  background: radial-gradient(
-    ellipse at center,
-    var(--surface) 0,
-    transparent 65%
-  );
+.vibe-project p {
+  max-width: 64ch;
+  margin: 12px 0;
 }
-.empty-art {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  color: var(--ornament);
-  margin-bottom: 28px;
+.vibe-project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
 }
-.empty-bracket {
-  font-size: 3.125rem;
-  font-weight: 200;
-  font-family: var(--mono);
-  color: #c2c5c7;
-}
-.empty-state h2 {
-  font-size: 1.4375rem;
-  font-weight: 500;
-}
-.empty-state > p {
-  font-size: 1rem;
-  margin-top: 12px;
-}
-.empty-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 32px;
-  color: var(--muted);
-  font-size: 0.75rem;
+@media (min-width: 1024px) {
+  .vibe-project {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    column-gap: 32px;
+  }
 }
 .return-link {
   margin-top: 8px;
@@ -380,26 +359,6 @@ img {
   }
   .footer-signature {
     display: none;
-  }
-  .collection-page {
-    padding: 68px 24px 56px;
-  }
-  .collection-description {
-    font-size: 1rem;
-    max-width: 30em;
-  }
-  .empty-state {
-    margin-top: 44px;
-    padding: 44px 12px 36px;
-  }
-  .empty-state h2 {
-    font-size: 1.25rem;
-  }
-  .empty-state > p {
-    font-size: 0.9375rem;
-  }
-  .collection-page h1 {
-    font-size: 2.25rem;
   }
   .collection-path {
     font-size: 0.8125rem;

@@ -1,0 +1,12 @@
+---
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+---
+
+<p class="eyebrow collection-path">
+  <span class="prompt" aria-hidden="true">❯</span>
+  <span>~/{path}</span>
+  <span class="cursor" aria-hidden="true"></span>
+</p>

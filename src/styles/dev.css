@@ -51,7 +51,7 @@
   color: var(--ink);
   background: #ffffff55;
 }
-.dev-sidebar li a[aria-current='page'] {
+.dev-sidebar li a[aria-current] {
   color: var(--accent);
   background: #ffffff80;
   border-color: var(--accent);
@@ -60,7 +60,7 @@
   opacity: 0;
   font-family: var(--mono);
 }
-.dev-sidebar li a[aria-current='page'] .dev-nav-arrow {
+.dev-sidebar li a[aria-current] .dev-nav-arrow {
   opacity: 1;
 }
 .dev-menu-toggle {
@@ -76,6 +76,59 @@
 .dev-page-header h1 {
   margin: 16px 0;
   font-size: clamp(2rem, 4vw, 2.75rem);
+}
+.pi-switch {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 16px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  font: 0.8125rem var(--mono);
+}
+.pi-switch::before {
+  content: '';
+  position: absolute;
+  inset: 3px auto 3px 3px;
+  width: calc(50% - 3px);
+  border-radius: inherit;
+  background: var(--accent);
+}
+.pi-switch:has([value='t3-code']:checked)::before {
+  transform: translateX(100%);
+}
+.pi-switch label {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: inherit;
+  cursor: pointer;
+}
+.pi-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.pi-switch label:has(:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.pi-switch input:checked + span {
+  color: white;
+}
+.dev-article:has([value='terminal']:checked) #setup-t3-code,
+.dev-article:has([value='t3-code']:checked) #setup-terminal {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pi-switch::before {
+    transition: transform 0.18s ease-out;
+  }
 }
 .dev-lead {
   max-width: 43em;
@@ -106,6 +159,11 @@
 }
 .dev-section > p {
   font-size: 0.9375rem;
+}
+.dev-t3-intro p a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .dev-section > p + p {
   margin-top: 16px;

@@ -122,12 +122,19 @@ test('education precedes research and the welcome terminal uses one shared profi
   }
 });
 
-test('Vibe Coding remains intentionally empty', async () => {
+test('Vibe Coding features remote-copy and its inline transfer diagram', async () => {
   for (const locale of ['en', 'zh']) {
     const html = await read(`${locale}/vibe-coding/index.html`);
-    assert.ok(html.includes(locale === 'en' ? '0 entries' : '0 条内容'));
-    assert.ok(html.includes('empty-state'));
-    assert.ok(!html.includes('class="paper"'));
+    assert.ok(html.includes('aria-controls="vibe-coding-navigation"'));
+    assert.ok(html.includes('href="#remote-copy" aria-current="location"'));
+    assert.ok(html.includes('id="remote-copy"'));
+    assert.ok(html.includes('href="https://github.com/ErwinLiYH/remote-copy"'));
+    assert.ok(
+      html.includes(
+        `<img src="${base}/images/remote-copy/transfer-topology.png"`,
+      ),
+    );
+    assert.ok(html.includes(locale === 'en' ? 'SSH servers' : 'SSH 服务器'));
   }
 });
 
@@ -173,6 +180,32 @@ test('Pi setup includes the official installer and three complete one-line plugi
       for (const name of packages)
         assert.ok(section.includes(`https://www.npmjs.com/package/${name}`));
     }
+  }
+});
+
+test('T3 Code lists only its own plugin groups and install commands', async () => {
+  for (const locale of ['en', 'zh']) {
+    const html = await read(`${locale}/dev/index.html`);
+    const t3 = html.split('id="setup-t3-code"')[1]?.split('</article>')[0];
+    assert.ok(t3);
+    assert.ok(t3.includes('href="https://t3.codes"'));
+    assert.match(
+      t3,
+      /class="dev-section dev-t3-intro"[\s\S]*href="https:\/\/t3\.codes\/download"[\s\S]*id="t3-install"/,
+    );
+    const pluginGroups = t3.slice(t3.indexOf('<nav'));
+    assert.doesNotMatch(pluginGroups, /pi-tidy|pi-stamp|pi-subagents|Optional/);
+    assert.match(t3, /href="#t3-basic"/);
+    assert.match(t3, /href="#t3-codex-related"/);
+    assert.deepEqual(
+      [...pluginGroups.matchAll(/<code>(.*?)<\/code>/g)].map(
+        (match) => match[1],
+      ),
+      [
+        'pi install npm:pi-web-access &amp;&amp; pi install npm:@narumitw/pi-btw &amp;&amp; pi install npm:pi-goal-x',
+        'pi install npm:@narumitw/pi-accounts &amp;&amp; pi install npm:@narumitw/pi-codex-compact &amp;&amp; pi install npm:@narumitw/pi-usage',
+      ],
+    );
   }
 });
 

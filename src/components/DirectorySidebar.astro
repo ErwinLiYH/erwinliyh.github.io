@@ -1,0 +1,88 @@
+---
+import '../styles/dev.css';
+interface Props {
+  directory: string;
+  group: string;
+  label: string;
+  menu: string;
+  title: string;
+  items: { href: string; label: string; current?: 'page' | 'location' }[];
+}
+const { directory, group, label, menu, title, items } = Astro.props;
+const navId = `${directory}-navigation`;
+---
+
+<aside class="dev-sidebar" data-directory-sidebar>
+  <p class="eyebrow dev-sidebar-title">
+    ~/{directory} <span aria-hidden="true">/</span>
+  </p>
+  <button
+    class="dev-menu-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls={navId}
+    aria-label={menu}
+    title={menu}
+  >
+    <span class="dev-menu-icon" aria-hidden="true">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <path class="dev-menu-bars" d="M4 6h16M4 12h16M4 18h16" />
+        <path class="dev-menu-close" d="m6 6 12 12M18 6 6 18" />
+      </svg>
+    </span>
+    <span class="dev-menu-current">{title}</span>
+  </button>
+  <nav id={navId} aria-label={label}>
+    <p class="dev-nav-group">
+      <span class="status-dot"></span> {group}
+    </p>
+    <ul>
+      {items.map((item) => (
+        <li>
+          <a href={item.href} aria-current={item.current}>
+            <span>{item.label}</span>
+            <span class="dev-nav-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<script>
+  for (const sidebar of document.querySelectorAll<HTMLElement>(
+    '[data-directory-sidebar]',
+  )) {
+    const toggle =
+      sidebar.querySelector<HTMLButtonElement>('.dev-menu-toggle')!;
+    const narrow = window.matchMedia('(max-width: 799px)');
+    const setOpen = (open: boolean) => {
+      sidebar.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
+    sidebar.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && narrow.matches) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    sidebar.querySelector('nav')?.addEventListener('click', (event) => {
+      if (event.target instanceof Element && event.target.closest('a'))
+        setOpen(false);
+    });
+    narrow.addEventListener('change', () => setOpen(false));
+  }
+</script>

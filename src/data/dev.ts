@@ -34,8 +34,6 @@ export const devCopy = {
     repo: '源码仓库',
     package: 'npm 页面',
     installGroup: '安装这一组',
-    safety:
-      '以下命令会安装第三方扩展；运行前请先审阅各项目说明。部分扩展还需要模型服务或 API 配置，详见各自文档。',
     promptContext:
       '这些约定大多是个人偏好；对 subagent 自动调用的限制，则也有实证依据。',
     subagentRationale:
@@ -81,8 +79,6 @@ export const devCopy = {
     repo: 'Repository',
     package: 'npm page',
     installGroup: 'Install this group',
-    safety:
-      'These commands install third-party extensions; review each project before running them. Some extensions also need provider or API configuration—see their documentation.',
     promptContext:
       'Most of these rules are personal preferences; the restriction on automatic subagent use also has an empirical basis.',
     subagentRationale:
@@ -218,6 +214,31 @@ export const pluginGroups = [
         },
       },
     ],
+  },
+];
+
+const terminalOnlyPlugins = new Set(['pi-tidy', 'pi-stamp', 'pi-subagents']);
+export const piSetups = [
+  { id: 'terminal', label: 'Terminal', groups: pluginGroups },
+  {
+    id: 't3-code',
+    label: 'T3 Code',
+    groups: pluginGroups
+      .map((group) => ({
+        ...group,
+        id: `t3-${group.id}`,
+        description:
+          group.id === 'basic'
+            ? {
+                zh: '在 T3 Code 中使用 Pi 时，我保留联网、旁支问答和持续目标管理。',
+                en: 'In T3 Code, I use Pi for web access, side questions, and persistent goals.',
+              }
+            : group.description,
+        plugins: group.plugins.filter(
+          (plugin) => !terminalOnlyPlugins.has(plugin.name),
+        ),
+      }))
+      .filter((group) => group.plugins.length > 0),
   },
 ];
 
